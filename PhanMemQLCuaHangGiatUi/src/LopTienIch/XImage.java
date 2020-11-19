@@ -14,7 +14,7 @@ import javax.swing.ImageIcon;
 
 public class XImage {
     public static  Image getAppIcon(){//
-       URL url = XImage.class.getResource("/icon/logofpt.png");
+       URL url = XImage.class.getResource("/icon/Logo.jpg");
       return new ImageIcon(url).getImage();
     }    
     public static void save(File src){//đưa một file vào lưu một file vào một thư mục nào đó cần

@@ -68,7 +68,7 @@ public class MHChinh extends javax.swing.JFrame {
         mniHuongDan = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Cửa hàng giặt là");
+        setTitle("Cửa hàng giặt ủi");
 
         jPanel1.setBackground(new java.awt.Color(153, 153, 255));
 
@@ -389,48 +389,48 @@ public class MHChinh extends javax.swing.JFrame {
     }//GEN-LAST:event_mniDoiMatKhauActionPerformed
 
     private void mniKetThucActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniKetThucActionPerformed
-        // TODO add your handling code here:
+        
         ketThuc();
     }//GEN-LAST:event_mniKetThucActionPerformed
 
     private void mniMatHangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniMatHangActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_mniMatHangActionPerformed
 
     private void mniHoaDonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniHoaDonActionPerformed
-        // TODO add your handling code here:
+       
     }//GEN-LAST:event_mniHoaDonActionPerformed
 
     private void mniDichVuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniDichVuActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_mniDichVuActionPerformed
 
     private void mniKhachHangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniKhachHangActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_mniKhachHangActionPerformed
 
     private void mniNhanVienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniNhanVienActionPerformed
-        // TODO add your handling code here:
+        openNhanVien();
     }//GEN-LAST:event_mniNhanVienActionPerformed
 
     private void mniDoanhThuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniDoanhThuActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_mniDoanhThuActionPerformed
 
     private void mniLuongKhachHangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniLuongKhachHangActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_mniLuongKhachHangActionPerformed
 
     private void mniBangDichVuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniBangDichVuActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_mniBangDichVuActionPerformed
 
     private void mniGioiThieuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniGioiThieuActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_mniGioiThieuActionPerformed
 
     private void mniHuongDanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniHuongDanActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_mniHuongDanActionPerformed
 
     private void btnDangNhapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDangNhapActionPerformed
@@ -438,19 +438,19 @@ public class MHChinh extends javax.swing.JFrame {
     }//GEN-LAST:event_btnDangNhapActionPerformed
 
     private void btnMatHangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMatHangActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_btnMatHangActionPerformed
 
     private void btnDichVuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDichVuActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_btnDichVuActionPerformed
 
     private void btnKhachHangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKhachHangActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_btnKhachHangActionPerformed
 
     private void btnNhanVienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNhanVienActionPerformed
-        // TODO add your handling code here:
+        openNhanVien();
     }//GEN-LAST:event_btnNhanVienActionPerformed
 
     private void btnKetThucActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKetThucActionPerformed
@@ -562,5 +562,8 @@ public class MHChinh extends javax.swing.JFrame {
         if (MsgBox.confirm(this, "Bạn muốn kết thúc làm việc?")) {
             System.exit(0);
         }
+    }
+    private void openNhanVien() {
+        new QLNhanVien(this, true).setVisible(true);
     }
 }
