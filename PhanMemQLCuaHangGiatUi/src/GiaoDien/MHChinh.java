@@ -402,7 +402,7 @@ public class MHChinh extends javax.swing.JFrame {
     }//GEN-LAST:event_mniHoaDonActionPerformed
 
     private void mniDichVuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniDichVuActionPerformed
-        
+        openDichVu();
     }//GEN-LAST:event_mniDichVuActionPerformed
 
     private void mniKhachHangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniKhachHangActionPerformed
@@ -565,5 +565,8 @@ public class MHChinh extends javax.swing.JFrame {
     }
     private void openNhanVien() {
         new QLNhanVien(this, true).setVisible(true);
+    }
+    private  void openDichVu(){
+    new QLDichVu(this, true).setVisible(true);
     }
 }

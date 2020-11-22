@@ -4,8 +4,8 @@ public class DichVu {
 
     String MaDV;
     String LoaiDV;
-    Double DonVi;
-    Double DonGia;
+    double DonVi;
+    double DonGia;
     String MoTa;
 
     public String getMaDV() {
