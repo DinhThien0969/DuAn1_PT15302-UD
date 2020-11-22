@@ -12,6 +12,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import javax.swing.JInternalFrame;
 import javax.swing.Timer;
 
 /**
@@ -21,7 +22,7 @@ import javax.swing.Timer;
 public class MHChinh extends javax.swing.JFrame {
 
     /**
-     * Creates new form MHChinh
+     * Creates new form MHChinh2
      */
     public MHChinh() {
         initComponents();
@@ -37,6 +38,7 @@ public class MHChinh extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        Destop = new javax.swing.JDesktopPane();
         jPanel1 = new javax.swing.JPanel();
         btnDangNhap = new javax.swing.JButton();
         btnMatHang = new javax.swing.JButton();
@@ -46,7 +48,6 @@ public class MHChinh extends javax.swing.JFrame {
         btnNhanVien = new javax.swing.JButton();
         lblTrangThai = new javax.swing.JLabel();
         lblDongHo = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         mniDangNhap = new javax.swing.JMenuItem();
@@ -68,7 +69,6 @@ public class MHChinh extends javax.swing.JFrame {
         mniHuongDan = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Cửa hàng giặt ủi");
 
         jPanel1.setBackground(new java.awt.Color(153, 153, 255));
 
@@ -182,7 +182,36 @@ public class MHChinh extends javax.swing.JFrame {
         lblDongHo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblDongHo.setText("Time");
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/hinhnenchinh.jpg"))); // NOI18N
+        Destop.setLayer(jPanel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        Destop.setLayer(lblTrangThai, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        Destop.setLayer(lblDongHo, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        javax.swing.GroupLayout DestopLayout = new javax.swing.GroupLayout(Destop);
+        Destop.setLayout(DestopLayout);
+        DestopLayout.setHorizontalGroup(
+            DestopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(DestopLayout.createSequentialGroup()
+                .addGroup(DestopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(DestopLayout.createSequentialGroup()
+                        .addComponent(lblTrangThai, javax.swing.GroupLayout.PREFERRED_SIZE, 848, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblDongHo, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        DestopLayout.setVerticalGroup(
+            DestopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DestopLayout.createSequentialGroup()
+                .addGroup(DestopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(DestopLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(lblDongHo, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(DestopLayout.createSequentialGroup()
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lblTrangThai, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
+        );
 
         jMenuBar1.setMinimumSize(new java.awt.Dimension(66, 35));
 
@@ -352,25 +381,11 @@ public class MHChinh extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(lblTrangThai, javax.swing.GroupLayout.DEFAULT_SIZE, 877, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblDongHo, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(Destop)
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblTrangThai, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblDongHo, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Destop)
         );
 
         pack();
@@ -389,24 +404,24 @@ public class MHChinh extends javax.swing.JFrame {
     }//GEN-LAST:event_mniDoiMatKhauActionPerformed
 
     private void mniKetThucActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniKetThucActionPerformed
-        
+
         ketThuc();
     }//GEN-LAST:event_mniKetThucActionPerformed
 
     private void mniMatHangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniMatHangActionPerformed
-        
+
     }//GEN-LAST:event_mniMatHangActionPerformed
 
     private void mniHoaDonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniHoaDonActionPerformed
-       
+
     }//GEN-LAST:event_mniHoaDonActionPerformed
 
     private void mniDichVuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniDichVuActionPerformed
-        
+
     }//GEN-LAST:event_mniDichVuActionPerformed
 
     private void mniKhachHangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniKhachHangActionPerformed
-        
+
     }//GEN-LAST:event_mniKhachHangActionPerformed
 
     private void mniNhanVienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniNhanVienActionPerformed
@@ -414,23 +429,23 @@ public class MHChinh extends javax.swing.JFrame {
     }//GEN-LAST:event_mniNhanVienActionPerformed
 
     private void mniDoanhThuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniDoanhThuActionPerformed
-        
+
     }//GEN-LAST:event_mniDoanhThuActionPerformed
 
     private void mniLuongKhachHangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniLuongKhachHangActionPerformed
-        
+
     }//GEN-LAST:event_mniLuongKhachHangActionPerformed
 
     private void mniBangDichVuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniBangDichVuActionPerformed
-        
+
     }//GEN-LAST:event_mniBangDichVuActionPerformed
 
     private void mniGioiThieuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniGioiThieuActionPerformed
-        
+
     }//GEN-LAST:event_mniGioiThieuActionPerformed
 
     private void mniHuongDanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniHuongDanActionPerformed
-        
+
     }//GEN-LAST:event_mniHuongDanActionPerformed
 
     private void btnDangNhapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDangNhapActionPerformed
@@ -438,24 +453,24 @@ public class MHChinh extends javax.swing.JFrame {
     }//GEN-LAST:event_btnDangNhapActionPerformed
 
     private void btnMatHangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMatHangActionPerformed
-        
+
     }//GEN-LAST:event_btnMatHangActionPerformed
 
     private void btnDichVuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDichVuActionPerformed
-        
+
     }//GEN-LAST:event_btnDichVuActionPerformed
 
     private void btnKhachHangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKhachHangActionPerformed
-        
-    }//GEN-LAST:event_btnKhachHangActionPerformed
 
-    private void btnNhanVienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNhanVienActionPerformed
-        openNhanVien();
-    }//GEN-LAST:event_btnNhanVienActionPerformed
+    }//GEN-LAST:event_btnKhachHangActionPerformed
 
     private void btnKetThucActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKetThucActionPerformed
         ketThuc();
     }//GEN-LAST:event_btnKetThucActionPerformed
+
+    private void btnNhanVienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNhanVienActionPerformed
+        openNhanVien();
+    }//GEN-LAST:event_btnNhanVienActionPerformed
 
     /**
      * @param args the command line arguments
@@ -483,6 +498,7 @@ public class MHChinh extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(MHChinh.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -493,13 +509,13 @@ public class MHChinh extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JDesktopPane Destop;
     private javax.swing.JButton btnDangNhap;
     private javax.swing.JButton btnDichVu;
     private javax.swing.JButton btnKetThuc;
     private javax.swing.JButton btnKhachHang;
     private javax.swing.JButton btnMatHang;
     private javax.swing.JButton btnNhanVien;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
@@ -552,7 +568,14 @@ public class MHChinh extends javax.swing.JFrame {
 
     void openDoiMatKhau() {
         if (Auth.isLogin()) {//kiểm tra xem đăng nhập hay chưa
-            new DoiMatKhau(this, true).setVisible(true);//nếu đăng nhập rồi thì mở
+            for (JInternalFrame frmChild : Destop.getAllFrames()) {
+            frmChild.dispose();
+        }
+        DoiMatKhau cd = new DoiMatKhau();
+        cd.setTitle("Đổi mật khẩu");
+        cd.setLocation(this.getWidth() / 2 - cd.getWidth() / 2, (this.getHeight() - 50) / 2 - cd.getHeight() / 2 - 100);
+        Destop.add(cd);
+        cd.setVisible(true);
         } else {
             MsgBox.alert(this, "Vui lòng đăng nhập!");//còn chưa thì thông báo vui lòng đăng nhập
         }

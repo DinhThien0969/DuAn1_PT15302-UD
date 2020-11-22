@@ -13,15 +13,13 @@ import LopTienIch.MsgBox;
  *
  * @author admin
  */
-public class DoiMatKhau extends javax.swing.JDialog {
+public class DoiMatKhau extends javax.swing.JInternalFrame {
 
     /**
-     * Creates new form DoiMatKhau
+     * Creates new form DoiMatKhau2
      */
-    public DoiMatKhau(java.awt.Frame parent, boolean modal) {
-        super(parent, modal);
-        initComponents();
-        init();
+    public DoiMatKhau() {
+        initComponents();        
     }
 
     /**
@@ -36,16 +34,14 @@ public class DoiMatKhau extends javax.swing.JDialog {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         txtMaNV = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
         txtMatKhau = new javax.swing.JPasswordField();
-        txtMatKhauMoi = new javax.swing.JPasswordField();
+        jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        txtMatKhauMoi = new javax.swing.JPasswordField();
         jLabel5 = new javax.swing.JLabel();
         txtMatKhauMoi1 = new javax.swing.JPasswordField();
-        btnDongY = new javax.swing.JButton();
         btnHuyBo = new javax.swing.JButton();
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        btnDongY = new javax.swing.JButton();
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 153, 51));
@@ -63,16 +59,6 @@ public class DoiMatKhau extends javax.swing.JDialog {
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel5.setText("Xác nhận lại mật khẩu mới");
 
-        btnDongY.setBackground(new java.awt.Color(0, 204, 255));
-        btnDongY.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnDongY.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/dongy.png"))); // NOI18N
-        btnDongY.setText("Đồng ý");
-        btnDongY.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDongYActionPerformed(evt);
-            }
-        });
-
         btnHuyBo.setBackground(new java.awt.Color(0, 204, 255));
         btnHuyBo.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnHuyBo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/huybo.png"))); // NOI18N
@@ -83,6 +69,16 @@ public class DoiMatKhau extends javax.swing.JDialog {
             }
         });
 
+        btnDongY.setBackground(new java.awt.Color(0, 204, 255));
+        btnDongY.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnDongY.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/dongy.png"))); // NOI18N
+        btnDongY.setText("Đồng ý");
+        btnDongY.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDongYActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -90,33 +86,35 @@ public class DoiMatKhau extends javax.swing.JDialog {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(182, 182, 182)
+                        .addGap(228, 228, 228)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtMaNV, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel4)
-                            .addComponent(txtMatKhauMoi, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel5)
+                        .addGap(60, 60, 60)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(btnDongY)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(btnHuyBo))
-                            .addComponent(txtMatKhauMoi1)
-                            .addComponent(txtMatKhau))))
-                .addGap(38, 38, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtMaNV, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel4)
+                                    .addComponent(txtMatKhauMoi, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel5)
+                                    .addComponent(txtMatKhauMoi1, javax.swing.GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE)
+                                    .addComponent(txtMatKhau))))))
+                .addContainerGap(42, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jLabel3))
@@ -132,67 +130,26 @@ public class DoiMatKhau extends javax.swing.JDialog {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtMatKhauMoi, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtMatKhauMoi1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26)
+                .addGap(38, 38, 38)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnDongY)
                     .addComponent(btnHuyBo))
-                .addContainerGap(40, Short.MAX_VALUE))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnDongYActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDongYActionPerformed
-        // TODO add your handling code here:
-        this.doiMatKhau();
-    }//GEN-LAST:event_btnDongYActionPerformed
 
     private void btnHuyBoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHuyBoActionPerformed
         // TODO add your handling code here:
         this.huyBo();
     }//GEN-LAST:event_btnHuyBoActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(DoiMatKhau.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(DoiMatKhau.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(DoiMatKhau.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(DoiMatKhau.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+    private void btnDongYActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDongYActionPerformed
+        // TODO add your handling code here:
+        this.doiMatKhau();
+    }//GEN-LAST:event_btnDongYActionPerformed
 
-        /* Create and display the dialog */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                DoiMatKhau dialog = new DoiMatKhau(new javax.swing.JFrame(), true);
-                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-                    @Override
-                    public void windowClosing(java.awt.event.WindowEvent e) {
-                        System.exit(0);
-                    }
-                });
-                dialog.setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDongY;
@@ -207,10 +164,7 @@ public class DoiMatKhau extends javax.swing.JDialog {
     private javax.swing.JPasswordField txtMatKhauMoi;
     private javax.swing.JPasswordField txtMatKhauMoi1;
     // End of variables declaration//GEN-END:variables
-
-    private void init() {
-        this.setLocationRelativeTo(null);
-    }    
+       
     NhanVienDAO dao = new NhanVienDAO();
     private void doiMatKhau() {
         /*4 dòng mã đầu tiên là thu nhận dữ liệu trên form*/
@@ -242,5 +196,4 @@ public class DoiMatKhau extends javax.swing.JDialog {
     private void huyBo() {
         this.dispose();//đóng cửa sổ
     }
-
 }
