@@ -47,7 +47,7 @@
     </Component>
     <Component class="javax.swing.JProgressBar" name="pgbLoading">
       <Properties>
-        <Property name="maximum" type="int" value="200"/>
+        <Property name="maximum" type="int" value="70"/>
         <Property name="stringPainted" type="boolean" value="true"/>
       </Properties>
     </Component>

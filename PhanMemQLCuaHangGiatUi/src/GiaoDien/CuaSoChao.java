@@ -41,7 +41,7 @@ public class CuaSoChao extends javax.swing.JDialog {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/hinhnengiatui.jpg"))); // NOI18N
 
-        pgbLoading.setMaximum(200);
+        pgbLoading.setMaximum(70);
         pgbLoading.setStringPainted(true);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

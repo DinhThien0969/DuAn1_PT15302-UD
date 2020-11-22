@@ -409,7 +409,7 @@ public class MHChinh extends javax.swing.JFrame {
     }//GEN-LAST:event_mniKetThucActionPerformed
 
     private void mniMatHangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniMatHangActionPerformed
-
+        openQuanLyMatHang();
     }//GEN-LAST:event_mniMatHangActionPerformed
 
     private void mniHoaDonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniHoaDonActionPerformed
@@ -418,6 +418,7 @@ public class MHChinh extends javax.swing.JFrame {
 
     private void mniDichVuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniDichVuActionPerformed
 
+        openDichVu();
     }//GEN-LAST:event_mniDichVuActionPerformed
 
     private void mniKhachHangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniKhachHangActionPerformed
@@ -453,11 +454,11 @@ public class MHChinh extends javax.swing.JFrame {
     }//GEN-LAST:event_btnDangNhapActionPerformed
 
     private void btnMatHangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMatHangActionPerformed
-
+        openQuanLyMatHang();
     }//GEN-LAST:event_btnMatHangActionPerformed
 
     private void btnDichVuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDichVuActionPerformed
-
+        openDichVu();
     }//GEN-LAST:event_btnDichVuActionPerformed
 
     private void btnKhachHangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKhachHangActionPerformed
@@ -587,6 +588,33 @@ public class MHChinh extends javax.swing.JFrame {
         }
     }
     private void openNhanVien() {
-        new QLNhanVien(this, true).setVisible(true);
+        for (JInternalFrame frmChild : Destop.getAllFrames()) {
+            frmChild.dispose();
+        }
+        QLNhanVien cd = new QLNhanVien();
+        cd.setTitle("Quản lý nhân viên");
+        cd.setLocation(this.getWidth() / 2 - cd.getWidth() / 2, (this.getHeight() - 10) / 2 - cd.getHeight() / 2 - 80);
+        Destop.add(cd);
+        cd.setVisible(true);
+    }
+    private  void openDichVu(){
+    for (JInternalFrame frmChild : Destop.getAllFrames()) {
+            frmChild.dispose();
+        }
+        QLDichVu cd = new QLDichVu();
+        cd.setTitle("Quản lý dịch vụ");
+        cd.setLocation(this.getWidth() / 2 - cd.getWidth() / 2, (this.getHeight() - 10) / 2 - cd.getHeight() / 2 - 80);
+        Destop.add(cd);
+        cd.setVisible(true);
+    }
+    private void openQuanLyMatHang() {
+        for (JInternalFrame frmChild : Destop.getAllFrames()) {
+            frmChild.dispose();
+        }
+        QLMatHang cd = new QLMatHang();
+        cd.setTitle("Quản lý người học");
+        cd.setLocation(this.getWidth() / 2 - cd.getWidth() / 2, (this.getHeight() - 10) / 2 - cd.getHeight() / 2 - 90);
+        Destop.add(cd);
+        cd.setVisible(true);
     }
 }

@@ -8,7 +8,7 @@ public class MatHang {
     int SoLuong ;
     Boolean TrangThai;
     String MaNV;
-     String MaDV; 
+    String MaDV; 
 
     public String getMaMH() {
         return MaMH;

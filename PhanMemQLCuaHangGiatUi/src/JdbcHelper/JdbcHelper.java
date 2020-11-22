@@ -16,32 +16,34 @@ public class JdbcHelper {
     static {
         try {
             Class.forName(driver);
-        } catch (Exception e) {            
+        } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
-    
-    public static PreparedStatement getStmt(String sql, Object... args) throws SQLException{
+
+    public static PreparedStatement getStmt(String sql, Object... args) throws SQLException {
         Connection conn = DriverManager.getConnection(dburl, user, pass);
-        PreparedStatement stmt;
-        if(sql.trim().startsWith("{")){
+        PreparedStatement stmt = null;
+        if (sql.trim().startsWith("{")) {
             stmt = conn.prepareCall(sql);
-        } else{
+        } else {
             stmt = conn.prepareStatement(sql);
         }
         for (int i = 0; i < args.length; i++) {
             stmt.setObject(i + 1, args[i]);
         }
-        return  stmt;
+        return stmt;
     }
-    public static ResultSet query(String sql, Object... args) throws SQLException{
+
+    public static ResultSet query(String sql, Object... args) throws SQLException {
         PreparedStatement stmt = JdbcHelper.getStmt(sql, args);
         return stmt.executeQuery();
     }
-    public static Object value(String sql, Object... args){
+
+    public static Object value(String sql, Object... args) {
         try {
             ResultSet rs = JdbcHelper.query(sql, args);
-            if(rs.next()){
+            if (rs.next()) {
                 return rs.getObject(0);
             }
             rs.getStatement().getConnection().close();
@@ -50,17 +52,19 @@ public class JdbcHelper {
             throw new RuntimeException(e);
         }
     }
-    public static int update(String sql, Object... args){
+
+    public static int update(String sql, Object... args) {
         try {
-            PreparedStatement stmt = JdbcHelper.getStmt(sql, args);
-            try{
-                return stmt.executeUpdate();                        
-            }
-            finally{
+            PreparedStatement stmt = getStmt(sql, args);
+            try {
+                stmt.execute();
+            } finally {
                 stmt.getConnection().close();
             }
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-    }    
+        return 0;
+
 }
+    }
