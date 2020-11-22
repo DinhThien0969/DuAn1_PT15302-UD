@@ -174,7 +174,7 @@ public class MHChinh extends javax.swing.JFrame {
         lblTrangThai.setBackground(new java.awt.Color(255, 204, 51));
         lblTrangThai.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lblTrangThai.setForeground(new java.awt.Color(0, 0, 255));
-        lblTrangThai.setText("Hệ quản lý đào tạo");
+        lblTrangThai.setText("Hệ thống quản lý cửa hàng giặt ủi !");
 
         lblDongHo.setBackground(new java.awt.Color(51, 51, 0));
         lblDongHo.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
@@ -367,8 +367,8 @@ public class MHChinh extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblTrangThai, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblDongHo, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
