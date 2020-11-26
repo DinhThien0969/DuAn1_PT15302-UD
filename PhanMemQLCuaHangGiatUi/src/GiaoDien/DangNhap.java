@@ -9,6 +9,7 @@ import DAO.NhanVienDAO;
 import Entity.NhanVien;
 import LopTienIch.Auth;
 import LopTienIch.MsgBox;
+import java.awt.event.KeyEvent;
 
 
 
@@ -51,8 +52,22 @@ public class DangNhap extends javax.swing.JDialog {
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setText("Mã nhân viên");
 
+        txtMaNV.setText("nv003");
+        txtMaNV.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtMaNVKeyPressed(evt);
+            }
+        });
+
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setText("Mật khẩu");
+
+        txtMatKhau.setText("003");
+        txtMatKhau.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtMatKhauKeyPressed(evt);
+            }
+        });
 
         btnDangNhap.setBackground(new java.awt.Color(0, 153, 255));
         btnDangNhap.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -131,6 +146,16 @@ public class DangNhap extends javax.swing.JDialog {
         this.ketthuc();
     }//GEN-LAST:event_btnKetThucActionPerformed
 
+    private void txtMatKhauKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtMatKhauKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            dangnhap();
+    }//GEN-LAST:event_txtMatKhauKeyPressed
+    }
+    private void txtMaNVKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtMaNVKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            dangnhap();
+    }//GEN-LAST:event_txtMaNVKeyPressed
+    }
     /**
      * @param args the command line arguments
      */

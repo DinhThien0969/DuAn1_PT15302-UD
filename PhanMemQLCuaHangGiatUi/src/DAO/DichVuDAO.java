@@ -10,7 +10,7 @@ import java.util.List;
 public class DichVuDAO extends EduSysDAO<DichVu, String> {
 
     String INSERT_SQL = "INSERT INTO DichVu(MaDV, LoaiDV, DonVi, DonGia, MoTa) VALUES(?,?,?,?,?)";
-    String UPDATE_SQL = "UPDATE DichVu SET LoaiDV=?, DonVi=?, DonGia=?, MoTa=? WHERE MaDV=?";
+    String UPDATE_SQL = "UPDATE DichVu SET MaDV=?, LoaiDV=?, DonVi=?, DonGia=?, MoTa=? WHERE MaDV=?";
     String DELETE_SQL = "DELETE FROM DichVu WHERE MaDV=?";
     String SELECT_ALL_SQL = "SELECT*FROM DichVu";
     String SELECT_BY_ID_SQL = "SELECT*FROM DichVu WHERE MaDV=?";

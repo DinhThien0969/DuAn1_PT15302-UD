@@ -35,6 +35,8 @@ public class QLNhanVien extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        buttonGroup2 = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
         tab = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
@@ -82,10 +84,12 @@ public class QLNhanVien extends javax.swing.JInternalFrame {
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel4.setText("Giới tính");
 
+        buttonGroup2.add(rdoNam);
         rdoNam.setFont(new java.awt.Font("Tahoma", 2, 14)); // NOI18N
         rdoNam.setSelected(true);
         rdoNam.setText("Nam");
 
+        buttonGroup1.add(rdoNu);
         rdoNu.setFont(new java.awt.Font("Tahoma", 2, 14)); // NOI18N
         rdoNu.setText("Nữ");
 
@@ -104,10 +108,11 @@ public class QLNhanVien extends javax.swing.JInternalFrame {
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel9.setText("Vai trò");
 
+        buttonGroup2.add(rdoNhanVien);
         rdoNhanVien.setFont(new java.awt.Font("Tahoma", 2, 14)); // NOI18N
-        rdoNhanVien.setSelected(true);
         rdoNhanVien.setText("Nhân viên");
 
+        buttonGroup2.add(rdoQuanLy);
         rdoQuanLy.setFont(new java.awt.Font("Tahoma", 2, 14)); // NOI18N
         rdoQuanLy.setText("Quản lý");
 
@@ -353,6 +358,8 @@ public class QLNhanVien extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnSua;
     private javax.swing.JButton btnThem;
     private javax.swing.JButton btnXoa;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

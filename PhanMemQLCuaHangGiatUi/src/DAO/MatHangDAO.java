@@ -12,7 +12,7 @@ import JdbcHelper.JdbcHelper;
 
 public class MatHangDAO extends EduSysDAO<MatHang, String>{
     String INSERT_SQL = "insert into MatHang (MaMH, TenMH, SoLuong, TrangThai, MaNV, MaDV) values (?,?,?,?,?,?)";
-    String UPDATE_SQL = "update MatHang set TenMH = ?, SoLuong = ?, TrangThai=?, MaNV=?, MaDV=? where MaMH=?";
+    String UPDATE_SQL = "update MatHang set MaMH=?, TenMH = ?, SoLuong = ?, TrangThai=?, MaNV=?, MaDV=? where MaMH=?";
     String DELETE_SQL = "delete from MatHang where MaMH = ?";
     String SELECT_ALL_SQL = "select * from MatHang";
     String SELECT_BY_ID_SQL = "select * from MatHang where MaMH = ?";
@@ -55,8 +55,8 @@ public class MatHangDAO extends EduSysDAO<MatHang, String>{
     }
 
     @Override
-    public void delete(String id) {
-        JdbcHelper.update(DELETE_SQL, id);
+    public void delete(String key) {
+        JdbcHelper.update(DELETE_SQL, key);
     }
 
     @Override
@@ -65,8 +65,8 @@ public class MatHangDAO extends EduSysDAO<MatHang, String>{
     }
 
     @Override
-    public MatHang selectById(String id) {
-        List<MatHang> list = this.selectBySql(SELECT_BY_ID_SQL, id);
+    public MatHang selectById(String key) {
+        List<MatHang> list = this.selectBySql(SELECT_BY_ID_SQL, key);
         if (list.isEmpty()) {
             return null;
         }
@@ -75,7 +75,7 @@ public class MatHangDAO extends EduSysDAO<MatHang, String>{
 
     @Override
     protected List<MatHang> selectBySql(String sql, Object... args) {
-        List<MatHang> list = new ArrayList<>();
+        List<MatHang> list = new ArrayList<MatHang>();
         try {
             ResultSet rs = JdbcHelper.query(sql, args);
             while (rs.next()) {

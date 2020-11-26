@@ -38,6 +38,7 @@ public class QLMatHang extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         cboLoaiDichVu = new javax.swing.JComboBox<>();
@@ -70,6 +71,11 @@ public class QLMatHang extends javax.swing.JInternalFrame {
         jLabel2.setText("Loại dịch vụ");
 
         cboLoaiDichVu.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1" }));
+        cboLoaiDichVu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cboLoaiDichVuActionPerformed(evt);
+            }
+        });
 
         jLabel3.setText("Loai dịch vụ");
 
@@ -148,10 +154,12 @@ public class QLMatHang extends javax.swing.JInternalFrame {
                 .addContainerGap(21, Short.MAX_VALUE))
         );
 
+        buttonGroup1.add(rdoconhang);
         rdoconhang.setSelected(true);
         rdoconhang.setText("Còn Hàng");
         rdoconhang.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
+        buttonGroup1.add(rdohethang);
         rdohethang.setText("Hết Hàng");
 
         lblLoaiDichVu.setForeground(new java.awt.Color(255, 51, 51));
@@ -222,10 +230,7 @@ public class QLMatHang extends javax.swing.JInternalFrame {
 
         tblMatHang.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+
             },
             new String [] {
                 "Mã dịch vụ", "Mã mặt hàng", "Tên mặt hàng", "Số lượng", "Trạng thái"
@@ -312,11 +317,15 @@ public class QLMatHang extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnXoaActionPerformed
 
     private void tblMatHangMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblMatHangMouseClicked
-       if (evt.getClickCount() == 1) {
+       if (evt.getClickCount() == 2) {
             this.row = tblMatHang.getSelectedRow();
             this.edit();
         }
     }//GEN-LAST:event_tblMatHangMouseClicked
+
+    private void cboLoaiDichVuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboLoaiDichVuActionPerformed
+        chonDichVu();
+    }//GEN-LAST:event_cboLoaiDichVuActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -324,6 +333,7 @@ public class QLMatHang extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnSua;
     private javax.swing.JButton btnThem;
     private javax.swing.JButton btnXoa;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JComboBox<String> cboLoaiDichVu;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -368,7 +378,7 @@ public class QLMatHang extends javax.swing.JInternalFrame {
         model.setRowCount(0);
         try {
             DichVu dichvu = (DichVu) cboLoaiDichVu.getSelectedItem();
-            List<MatHang> list = dao.selectByDichVu(dichvu.getMaDV());
+            List<MatHang> list = dao.selectByDichVu(dichvu.getMaDV());            
             for (MatHang mh : list) {
                 Object[] row = {
                     mh.getMaDV(),
@@ -385,12 +395,20 @@ public class QLMatHang extends javax.swing.JInternalFrame {
     }
 
     void chonDichVu() {
-        DichVu dichvu = (DichVu) cboLoaiDichVu.getSelectedItem();        
-            lblLoaiDichVu.setText(dichvu.getLoaiDV());            
+        DichVu dichvu = (DichVu) cboLoaiDichVu.getSelectedItem();   
+        if (dichvu != null ) {
+            lblLoaiDichVu.setText(dichvu.getLoaiDV());  
             this.fillTable();
             this.row = -1;
             this.updateStatus();
             tab.setSelectedIndex(1);
+        }
+        else{
+            System.out.println("Looix");
+        }
+        
+                  
+            
         
     }
 

@@ -24,7 +24,7 @@ public class NhanVienDAO extends EduSysDAO<NhanVien, String> {
     @Override
     public void update(NhanVien entity) {
         JdbcHelper.update(UPDATE_SQL,
-                entity.getMaNV(),  entity.getTenNV(),entity.getGioiTinh(), entity.getMatKhau(), 
+                entity.getMaNV(), entity.getTenNV(), entity.getGioiTinh(), entity.getMatKhau(), 
                 entity.getSDT(), entity.getEmail(), entity.getDiaChi(), entity.getVaiTro());
     }
 
