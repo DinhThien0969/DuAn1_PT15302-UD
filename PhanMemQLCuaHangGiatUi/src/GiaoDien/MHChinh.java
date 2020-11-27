@@ -422,7 +422,7 @@ public class MHChinh extends javax.swing.JFrame {
     }//GEN-LAST:event_mniDichVuActionPerformed
 
     private void mniKhachHangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniKhachHangActionPerformed
-
+        openKhachHang();
     }//GEN-LAST:event_mniKhachHangActionPerformed
 
     private void mniNhanVienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniNhanVienActionPerformed
@@ -462,7 +462,7 @@ public class MHChinh extends javax.swing.JFrame {
     }//GEN-LAST:event_btnDichVuActionPerformed
 
     private void btnKhachHangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKhachHangActionPerformed
-
+        openKhachHang();
     }//GEN-LAST:event_btnKhachHangActionPerformed
 
     private void btnKetThucActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKetThucActionPerformed
@@ -558,9 +558,10 @@ public class MHChinh extends javax.swing.JFrame {
             }
         }).start();
     }
+
     void openDangNhap() {
         new DangNhap(this, true).setVisible(true);
-        
+
     }
 
     void dangXuat() {
@@ -571,13 +572,13 @@ public class MHChinh extends javax.swing.JFrame {
     void openDoiMatKhau() {
         if (Auth.isLogin()) {//kiểm tra xem đăng nhập hay chưa
             for (JInternalFrame frmChild : Destop.getAllFrames()) {
-            frmChild.dispose();
-        }
-        DoiMatKhau cd = new DoiMatKhau();
-        cd.setTitle("Đổi mật khẩu");
-        cd.setLocation(this.getWidth() / 2 - cd.getWidth() / 2, (this.getHeight() - 50) / 2 - cd.getHeight() / 2 - 100);
-        Destop.add(cd);
-        cd.setVisible(true);
+                frmChild.dispose();
+            }
+            DoiMatKhau cd = new DoiMatKhau();
+            cd.setTitle("Đổi mật khẩu");
+            cd.setLocation(this.getWidth() / 2 - cd.getWidth() / 2, (this.getHeight() - 50) / 2 - cd.getHeight() / 2 - 100);
+            Destop.add(cd);
+            cd.setVisible(true);
         } else {
             MsgBox.alert(this, "Vui lòng đăng nhập!");//còn chưa thì thông báo vui lòng đăng nhập
         }
@@ -588,6 +589,7 @@ public class MHChinh extends javax.swing.JFrame {
             System.exit(0);
         }
     }
+
     private void openNhanVien() {
         for (JInternalFrame frmChild : Destop.getAllFrames()) {
             frmChild.dispose();
@@ -598,8 +600,9 @@ public class MHChinh extends javax.swing.JFrame {
         Destop.add(cd);
         cd.setVisible(true);
     }
-    private  void openDichVu(){
-    for (JInternalFrame frmChild : Destop.getAllFrames()) {
+
+    private void openDichVu() {
+        for (JInternalFrame frmChild : Destop.getAllFrames()) {
             frmChild.dispose();
         }
         QLDichVu cd = new QLDichVu();
@@ -608,6 +611,18 @@ public class MHChinh extends javax.swing.JFrame {
         Destop.add(cd);
         cd.setVisible(true);
     }
+
+    private void openKhachHang() {
+        for (JInternalFrame frmChild : Destop.getAllFrames()) {
+            frmChild.dispose();
+        }
+        QLKhachHang cd = new QLKhachHang();
+        cd.setTitle("Quản lý khach hang");
+        cd.setLocation(this.getWidth() / 2 - cd.getWidth() / 2, (this.getHeight() - 10) / 2 - cd.getHeight() / 2 - 80);
+        Destop.add(cd);
+        cd.setVisible(true);
+    }
+
     private void openQuanLyMatHang() {
         for (JInternalFrame frmChild : Destop.getAllFrames()) {
             frmChild.dispose();

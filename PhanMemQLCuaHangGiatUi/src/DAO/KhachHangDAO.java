@@ -9,7 +9,7 @@ import java.util.List;
 public class KhachHangDAO extends EduSysDAO<KhachHang, String> {
 
     String INSERT_SQL = "INSERT INTO KhachHang(MaKH, TenKH, GioiTinh, DiaChi, SDT, GhiChu, MaNV) VALUES(?,?,?,?,?,?,?,?)";
-    String UPDATE_SQL = "UPDATE KhachHang SET TenKH=?, GioiTinh=?, DiaChi=?, SDT=?, GhiChu=? WHERE MaKH=?";
+    String UPDATE_SQL = "UPDATE KhachHang SET MaKH=?, TenKH=?, GioiTinh=?, DiaChi=?, SDT=?, GhiChu=? WHERE MaKH=?";
     String DELETE_SQL = "DELETE FROM KhachHang WHERE MaKH=?";
     String SELECT_ALL_SQL = "SELECT*FROM KhachHang";
     String SELECT_BY_ID_SQL = "SELECT*FROM KhachHang WHERE MaKH=?";
@@ -23,7 +23,7 @@ public class KhachHangDAO extends EduSysDAO<KhachHang, String> {
     @Override
     public void update(KhachHang entity) {
         JdbcHelper.update(UPDATE_SQL,
-                entity.getMaKH(), entity.getTenKH(), entity.getGioiTinh(), entity.getDiaChi(), entity.getSDT(), entity.getGhiChu());
+                entity.getMaKH(), entity.getTenKH(), entity.getGioiTinh(), entity.getDiaChi(), entity.getSDT(), entity.getGhiChu(), entity.getMaKH());
     }
 
     @Override
