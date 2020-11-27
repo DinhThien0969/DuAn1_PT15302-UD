@@ -49,6 +49,8 @@ CREATE TABLE MatHang
 	MaMH INT IDENTITY(1,1) NOT NULL,
 	TenMH NVARCHAR(50) NOT NULL,
 	SoLuong INT NOT NULL,
+	DonVi FLOAT NOT NULL,
+	DonGia FLOAT NOT NULL,
 	TrangThai BIT NOT NULL,
 	MaNV NVARCHAR(10) NOT NULL,
 	MaDV NVARCHAR(10) NOT NULL,	
@@ -108,13 +110,13 @@ INSERT INTO dbo.KhachHang VALUES  ( N'KH0005' ,N'Lê Thị Hương' ,0 ,N'Dịch
 INSERT INTO dbo.KhachHang VALUES  ( N'KH0006' ,N'Nguyễn Văn Đức' ,1 ,N'Bồ Đề - Duy Tiên - Hà Nam' ,0969753187 ,N'....' ,N'NV002')
 
 DELETE FROM dbo.MatHang
-INSERT INTO dbo.MatHang VALUES  (N'Áo phông' ,2, 1 ,N'NV002' ,N'DV03')
-INSERT INTO dbo.MatHang VALUES  (N'Áo khoác' ,2, 1 ,N'NV002' ,N'DV03')
-INSERT INTO dbo.MatHang VALUES  (N'Quần jean' ,2, 1 ,N'NV001' ,N'DV04')
-INSERT INTO dbo.MatHang VALUES  (N'Chăn bông' ,2, 1 ,N'NV001' ,N'DV04')
-INSERT INTO dbo.MatHang VALUES  (N'Màn, Gối' ,2, 0 ,N'NV003' ,N'DV02')
-INSERT INTO dbo.MatHang VALUES  (N'Những đồ màu trắng' ,2, 0 ,N'NV003' ,N'DV01')
-INSERT INTO dbo.MatHang VALUES  (N'Những đồ màu đen' ,2, 0 ,N'NV004' ,N'DV05')
+INSERT INTO dbo.MatHang VALUES  (N'Áo phông' ,2, 1,6.5, 60000 ,N'NV002' ,N'DV03')
+INSERT INTO dbo.MatHang VALUES  (N'Áo khoác' ,2, 1,8.5, 50000  ,N'NV002' ,N'DV03')
+INSERT INTO dbo.MatHang VALUES  (N'Quần jean' ,2, 1,6.5, 40000  ,N'NV001' ,N'DV04')
+INSERT INTO dbo.MatHang VALUES  (N'Chăn bông' ,2, 1,4.5, 20000 ,N'NV001' ,N'DV04')
+INSERT INTO dbo.MatHang VALUES  (N'Màn, Gối' ,2, 0,2.5, 30000 ,N'NV003' ,N'DV02')
+INSERT INTO dbo.MatHang VALUES  (N'Những đồ màu trắng' ,2, 0,10, 30000 ,N'NV003' ,N'DV01')
+INSERT INTO dbo.MatHang VALUES  (N'Những đồ màu đen' ,2, 0,4.5, 60000 ,N'NV004' ,N'DV05')
 
 DELETE FROM dbo.HoaDon
 INSERT INTO dbo.HoaDon VALUES  ( N'HD01' ,GETDATE() ,GETDATE() ,1 ,0.0 ,N'NV003' ,N'KH0002')

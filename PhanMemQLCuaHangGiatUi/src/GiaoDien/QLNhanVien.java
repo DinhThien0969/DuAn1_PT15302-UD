@@ -84,7 +84,7 @@ public class QLNhanVien extends javax.swing.JInternalFrame {
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel4.setText("Giới tính");
 
-        buttonGroup2.add(rdoNam);
+        buttonGroup1.add(rdoNam);
         rdoNam.setFont(new java.awt.Font("Tahoma", 2, 14)); // NOI18N
         rdoNam.setSelected(true);
         rdoNam.setText("Nam");
@@ -411,7 +411,7 @@ public class QLNhanVien extends javax.swing.JInternalFrame {
                     nv.getSDT(),
                     nv.getEmail(),
                     nv.getDiaChi(),
-                    nv.getVaiTro() ? "Quan ly" : "Nhan Vien"
+                    nv.getVaiTro() ? "Nhan vien" : "Quan ly"
                 };
                 model.addRow(row);
             }
@@ -439,8 +439,7 @@ public class QLNhanVien extends javax.swing.JInternalFrame {
         NhanVien nv = getForm();
         try {
             dao.update(nv);
-            fillTable();
-            clearForm();
+            fillTable();            
             MsgBox.alert(this, "Cập nhật thành công");
         } catch (Exception e) {
             MsgBox.alert(this, "Cập nhật thất bại");
@@ -502,8 +501,8 @@ public class QLNhanVien extends javax.swing.JInternalFrame {
         txtSDT.setText(String.valueOf(nv.getSDT()));
         txtEmail.setText(nv.getEmail());
         txtDiaChi.setText(nv.getDiaChi());
-        rdoQuanLy.setSelected(nv.getVaiTro());
-        rdoNhanVien.setSelected(!nv.getVaiTro());
+        rdoNhanVien.setSelected(nv.getVaiTro());
+        rdoQuanLy.setSelected(!nv.getVaiTro());
 
     }
 
@@ -512,12 +511,12 @@ public class QLNhanVien extends javax.swing.JInternalFrame {
         //Sau đó lấy toàn bộ thông tin trên form bỏ vào các thuộc tính của nhân viên
         nv.setMaNV(txtMaNV.getText());
         nv.setTenNV(txtTenNV.getText());
-        nv.setGioiTinh(rdoNu.isSelected());
+        nv.setGioiTinh(rdoNam.isSelected());
         nv.setMatKhau(new String(txtMatKhau.getPassword()));
         nv.setSDT(new Integer(txtSDT.getText()));
         nv.setEmail(txtEmail.getText());
         nv.setDiaChi(txtDiaChi.getText());
-        nv.setVaiTro(rdoQuanLy.isSelected());
+        nv.setVaiTro(rdoNhanVien.isSelected());
         return nv;
     }
 

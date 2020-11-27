@@ -51,7 +51,7 @@ public class QLMatHang extends javax.swing.JInternalFrame {
         jLabel7 = new javax.swing.JLabel();
         txtTenMH = new javax.swing.JTextField();
         txtSoLuong = new javax.swing.JTextField();
-        txtMaMH = new javax.swing.JTextField();
+        txtDonGia = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         btnThem = new javax.swing.JButton();
         btnSua = new javax.swing.JButton();
@@ -60,6 +60,8 @@ public class QLMatHang extends javax.swing.JInternalFrame {
         rdoconhang = new javax.swing.JRadioButton();
         rdohethang = new javax.swing.JRadioButton();
         lblLoaiDichVu = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        txtDonVi = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblMatHang = new javax.swing.JTable();
@@ -79,7 +81,7 @@ public class QLMatHang extends javax.swing.JInternalFrame {
 
         jLabel3.setText("Loai dịch vụ");
 
-        jLabel4.setText("Mã mặt hàng");
+        jLabel4.setText("Đơn giá");
 
         jLabel5.setText("Tên mặt hàng");
 
@@ -164,6 +166,8 @@ public class QLMatHang extends javax.swing.JInternalFrame {
 
         lblLoaiDichVu.setForeground(new java.awt.Color(255, 51, 51));
 
+        jLabel8.setText("Đơn vị");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -171,31 +175,39 @@ public class QLMatHang extends javax.swing.JInternalFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                            .addGap(56, 56, 56)
-                            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addContainerGap()
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(txtMaMH, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 551, Short.MAX_VALUE)
-                                    .addComponent(txtTenMH, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtSoLuong, javax.swing.GroupLayout.Alignment.LEADING))
-                                .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
+                        .addComponent(txtSoLuong, javax.swing.GroupLayout.PREFERRED_SIZE, 551, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtTenMH, javax.swing.GroupLayout.PREFERRED_SIZE, 551, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblLoaiDichVu, javax.swing.GroupLayout.PREFERRED_SIZE, 551, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel7)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(rdoconhang)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(rdohethang, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(33, Short.MAX_VALUE))
+                                .addContainerGap()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(txtDonGia, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 551, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(lblLoaiDichVu, javax.swing.GroupLayout.PREFERRED_SIZE, 551, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel5)
+                                    .addComponent(jLabel6)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel7)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(rdoconhang)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(rdohethang, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(txtDonVi, javax.swing.GroupLayout.PREFERRED_SIZE, 551, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(44, 44, 44)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -207,8 +219,12 @@ public class QLMatHang extends javax.swing.JInternalFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txtMaMH, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(txtDonGia, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(txtDonVi, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txtTenMH, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -221,9 +237,9 @@ public class QLMatHang extends javax.swing.JInternalFrame {
                     .addComponent(jLabel7)
                     .addComponent(rdoconhang, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(rdohethang, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addGap(35, 35, 35))
         );
 
         tab.addTab("Thông Tin", jPanel1);
@@ -233,11 +249,11 @@ public class QLMatHang extends javax.swing.JInternalFrame {
 
             },
             new String [] {
-                "Mã dịch vụ", "Mã mặt hàng", "Tên mặt hàng", "Số lượng", "Trạng thái"
+                "Mã mặt hàng", "Mã dịch vụ", "Tên mặt hàng", "Số lượng", "Đơn giá", "Đơn vị", "Trạng thái"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
+                false, false, false, false, true, true, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -257,7 +273,7 @@ public class QLMatHang extends javax.swing.JInternalFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 572, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 580, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -275,14 +291,17 @@ public class QLMatHang extends javax.swing.JInternalFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(180, 180, 180)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(52, 52, 52)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cboLoaiDichVu, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addComponent(tab, javax.swing.GroupLayout.PREFERRED_SIZE, 601, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(180, 180, 180)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(52, 52, 52)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cboLoaiDichVu, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(tab)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -293,8 +312,7 @@ public class QLMatHang extends javax.swing.JInternalFrame {
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cboLoaiDichVu, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tab, javax.swing.GroupLayout.PREFERRED_SIZE, 525, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(tab))
         );
 
         pack();
@@ -317,7 +335,7 @@ public class QLMatHang extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnXoaActionPerformed
 
     private void tblMatHangMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblMatHangMouseClicked
-       if (evt.getClickCount() == 2) {
+        if (evt.getClickCount() == 1) {
             this.row = tblMatHang.getSelectedRow();
             this.edit();
         }
@@ -342,6 +360,7 @@ public class QLMatHang extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -351,7 +370,8 @@ public class QLMatHang extends javax.swing.JInternalFrame {
     private javax.swing.JRadioButton rdohethang;
     private javax.swing.JTabbedPane tab;
     private javax.swing.JTable tblMatHang;
-    private javax.swing.JTextField txtMaMH;
+    private javax.swing.JTextField txtDonGia;
+    private javax.swing.JTextField txtDonVi;
     private javax.swing.JTextField txtSoLuong;
     private javax.swing.JTextField txtTenMH;
     // End of variables declaration//GEN-END:variables
@@ -359,9 +379,126 @@ public class QLMatHang extends javax.swing.JInternalFrame {
     MatHangDAO dao = new MatHangDAO();
     DichVuDAO dvdao = new DichVuDAO();
     int row = -1;
-    private void init() {
 
-        this.fillComboBoxTable();        
+    private void init() {
+        this.fillComboBoxTable();
+    }
+
+    void fillTable() {
+        DefaultTableModel model = (DefaultTableModel) tblMatHang.getModel();
+        model.setRowCount(0);
+        try {
+            DichVu dichvu = (DichVu) cboLoaiDichVu.getSelectedItem();
+            List<MatHang> list = dao.selectByDichVu(dichvu.getMaDV());
+            for (MatHang mh : list) {
+                Object[] row = {
+                    mh.getMaMH(),
+                    mh.getMaDV(),
+                    mh.getTenMH(),
+                    mh.getSoLuong(),
+                    mh.getDonGia(),
+                    mh.getDonVi(),
+                    mh.getTrangThai() ? "Con hang" : "het hang"
+                };
+                model.addRow(row);
+            }
+        } catch (Exception e) {
+            MsgBox.alert(this, "Lỗi truy vấn dữ liệu");
+        }
+    }
+
+    private void insert() {
+        MatHang mh = getForm();
+        try {
+            dao.insert(mh);
+            this.fillTable();
+            this.clearForm();
+            MsgBox.alert(this, "Thêm mới thành công");
+        } catch (Exception e) {
+            e.printStackTrace();
+            MsgBox.alert(this, "Thêm mới thất bại");
+        }
+    }
+
+    void update() {
+        MatHang mh = getForm();
+        try {
+            dao.update(mh);
+            this.fillTable();
+            MsgBox.alert(this, "Cập nhập thành công");
+        } catch (Exception e) {
+            e.printStackTrace();
+            MsgBox.alert(this, "Cập nhập thất bại");
+        }
+
+    }
+
+    void delete() {
+        if (MsgBox.confirm(this, "Bạn thực sự muốn xóa dịch vụ này?")) {
+            String mamh = String.valueOf(cboLoaiDichVu.getToolTipText());
+            try {
+                dao.delete(mamh);
+                this.fillTable();
+                this.clearForm();
+                MsgBox.alert(this, "Xóa thành công!");
+            } catch (Exception e) {
+                MsgBox.alert(this, "Xóa thất bại!");
+            }
+        }
+    }
+
+    void setForm(MatHang mh) {
+        cboLoaiDichVu.setToolTipText(String.valueOf(mh.getMaMH()));
+        cboLoaiDichVu.setSelectedItem(dvdao.findById(mh.getMaDV()));
+        txtDonGia.setText(String.valueOf(mh.getDonGia()));
+        txtDonVi.setText(String.valueOf(mh.getDonVi()));
+        txtTenMH.setText(mh.getTenMH());
+        txtSoLuong.setText(String.valueOf(mh.getSoLuong()));
+        rdoconhang.setSelected(mh.getTrangThai());
+        rdohethang.setSelected(!mh.getTrangThai());
+
+    }
+
+    private MatHang getForm() {
+        MatHang mh = new MatHang();
+        DichVu dichvu = (DichVu) cboLoaiDichVu.getSelectedItem();
+        mh.setMaDV(dichvu.getMaDV());
+        mh.setDonGia(Double.valueOf(txtDonGia.getText()));
+        mh.setDonVi(Double.valueOf(txtDonVi.getText()));
+        mh.setTenMH(txtTenMH.getText());
+        mh.setSoLuong(Integer.valueOf(txtSoLuong.getText()));
+        mh.setTrangThai(rdoconhang.isSelected());
+        return mh;
+    }
+
+    void clearForm() {
+        lblLoaiDichVu.setText(null);
+        txtDonGia.setText(null);
+        txtDonVi.setText(null);
+        txtTenMH.setText(null);
+        txtSoLuong.setText(null);
+        rdoconhang.setSelected(false);
+        rdohethang.setSelected(false);
+        this.row = -1;
+        this.updateStatus();
+
+    }
+
+    void edit() {
+        String mamh = String.valueOf(tblMatHang.getValueAt(this.row, 0));
+        MatHang mh = dao.selectById(mamh);
+        this.setForm(mh);
+        tab.setSelectedIndex(0);
+        this.updateStatus();
+
+    }
+
+    private void updateStatus() {
+        boolean edit = (this.row >= 0);
+        //Trạng thái form
+        btnThem.setEnabled(!edit);
+        btnSua.setEnabled(!edit);
+        btnXoa.setEnabled(!edit);
     }
 
     private void fillComboBoxTable() {
@@ -373,143 +510,20 @@ public class QLMatHang extends javax.swing.JInternalFrame {
         }
     }
 
-    void fillTable() {
-        DefaultTableModel model = (DefaultTableModel) tblMatHang.getModel();
-        model.setRowCount(0);
-        try {
-            DichVu dichvu = (DichVu) cboLoaiDichVu.getSelectedItem();
-            List<MatHang> list = dao.selectByDichVu(dichvu.getMaDV());            
-            for (MatHang mh : list) {
-                Object[] row = {
-                    mh.getMaDV(),
-                    mh.getMaMH(),                    
-                    mh.getTenMH(),
-                    mh.getSoLuong(),                    
-                    mh.getTrangThai() ? "Con hang" : "het hang"
-                };
-                model.addRow(row);
-            }
-        } catch (Exception e) {
-            MsgBox.alert(this, "Lỗi truy vấn dữ liệu");
-        }
-    }
-
     void chonDichVu() {
-        DichVu dichvu = (DichVu) cboLoaiDichVu.getSelectedItem();   
-        if (dichvu != null ) {
-            lblLoaiDichVu.setText(dichvu.getLoaiDV());  
+        DichVu dichvu = (DichVu) cboLoaiDichVu.getSelectedItem();
+        if (dichvu != null) {
+            txtDonGia.setText(String.valueOf(dichvu.getDonGia()));
+            txtDonVi.setText(String.valueOf(dichvu.getDonVi()));
+            lblLoaiDichVu.setText(dichvu.getLoaiDV());
             this.fillTable();
             this.row = -1;
             this.updateStatus();
             tab.setSelectedIndex(1);
-        }
-        else{
-            System.out.println("Looix");
-        }
-        
-                  
-            
-        
-    }
-
-    private void updateStatus() {
-        boolean edit = (this.row >= 0);        
-        //Trạng thái form
-        btnThem.setEnabled(!edit);
-        btnSua.setEnabled(edit);
-        btnXoa.setEnabled(edit);        
-    }
-
-    void edit() {
-        String mamh = (String) tblMatHang.getValueAt(this.row, 0);
-        MatHang mh = dao.selectById(mamh);
-        this.setForm(mh);
-        tab.setSelectedIndex(0);
-        this.updateStatus();
-
-    }
-    private void delete() {
-        DefaultTableModel model = (DefaultTableModel) tblMatHang.getModel();
-        if (!Auth.isManager()) {
-            MsgBox.alert(this, "Bạn không có quyền xóa");
         } else {
-            String makh = (String) model.getValueAt(0, 0);
-
-            if (MsgBox.confirm(this, "Bạn thật sự muốn xóa Dịch vụ này?")) {
-                try {
-                    dao.delete(makh);
-                    this.fillTable();
-                    this.clearForm();
-                    MsgBox.alert(this, "Xóa thành công");
-
-                } catch (Exception e) {
-                    e.printStackTrace();
-                    MsgBox.alert(this, "Xóa thất bại");
-                }
-            }
-
-        }
-    }
-    
-    void clearForm() {
-        lblLoaiDichVu.setText(null);
-        txtMaMH.setText(null);
-        txtTenMH.setText(null);
-        txtSoLuong.setText(null);               
-        rdoconhang.setSelected(false);
-        rdohethang.setSelected(false);
-        this.row = -1;
-        this.updateStatus();
-
-    }
-
-    private void insert() {
-        MatHang mh = getForm();
-        try {
-            dao.insert(mh);
-            this.fillTable();
-            this.clearForm();
-            MsgBox.alert(this, "Cập nhập thành công");
-        } catch (Exception e) {
-            e.printStackTrace();
-            MsgBox.alert(this, "Cập nhập thất bại");
-        }
-    }
-    
-    void update() {
-        MatHang mh = getForm();
-        try {
-            dao.update(mh);
-            this.fillTable();
-            this.clearForm();
-            MsgBox.alert(this, "Cập nhập thành công");
-        } catch (Exception e) {
-            e.printStackTrace();
-            MsgBox.alert(this, "Cập nhập thất bại");
+            System.out.println("Lỗi");
         }
 
     }
 
-    private MatHang getForm() {
-        MatHang mh = new MatHang();
-        DichVu dichvu = (DichVu) cboLoaiDichVu.getSelectedItem();               
-        mh.setMaDV(dichvu.getMaDV());
-        mh.setMaMH(cboLoaiDichVu.getToolTipText());
-        mh.setTenMH(txtTenMH.getText());
-        mh.setSoLuong(Integer.valueOf(txtSoLuong.getText()));
-        mh.setTrangThai(rdoconhang.isSelected());
-        
-        return mh;
-    }
-    
-    void setForm(MatHang mh) {
-        cboLoaiDichVu.setToolTipText(String.valueOf(mh.getMaMH()));
-        cboLoaiDichVu.setSelectedItem(dvdao.findById(mh.getMaDV()));
-        txtMaMH.setText(mh.getMaMH());
-        txtTenMH.setText(mh.getTenMH());        
-        txtSoLuong.setText(String.valueOf(mh.getSoLuong()));        
-        rdoconhang.setSelected(mh.getTrangThai());
-        rdohethang.setSelected(!mh.getTrangThai());
-        
-    }
 }

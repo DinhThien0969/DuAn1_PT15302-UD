@@ -22,7 +22,8 @@ public class DichVuDAO extends EduSysDAO<DichVu, String> {
 
     @Override
     public void update(DichVu entity) {
-        JdbcHelper.update(UPDATE_SQL, entity.getMaDV(), entity.getLoaiDV(), entity.getDonVi(), entity.getDonGia(), entity.getMoTa());
+        JdbcHelper.update(UPDATE_SQL, 
+                entity.getMaDV(), entity.getLoaiDV(), entity.getDonVi(), entity.getDonGia(), entity.getMoTa(), entity.getMaDV());
     }
 
     @Override
@@ -46,7 +47,7 @@ public class DichVuDAO extends EduSysDAO<DichVu, String> {
 
     @Override
     protected List<DichVu> selectBySql(String sql, Object... args) {
-        List<DichVu> list = new ArrayList<>();
+        List<DichVu> list = new ArrayList<DichVu>();
         try {
             ResultSet rs = JdbcHelper.query(sql, args);
             while (rs.next()) {
@@ -64,12 +65,7 @@ public class DichVuDAO extends EduSysDAO<DichVu, String> {
             throw new RuntimeException();
         }
 
-    }
-    
-      public List<DichVu> select(){ 
-          String sql="SELECT * FROM chuyenDe";
-          return selectBySql(sql);
-      }
+    }          
       public DichVu findById(String madv) {
             String sql = "SELECT * FROM DichVu WHERE MaDV=?";
             List<DichVu> list = selectBySql(sql, madv);

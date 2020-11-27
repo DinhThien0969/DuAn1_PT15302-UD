@@ -384,8 +384,7 @@ public class QLDichVu extends javax.swing.JInternalFrame {
         DichVu dv = getForm();
         try {
             dao.update(dv);
-            fillTable();
-            clearForm();
+            fillTable();            
             MsgBox.alert(this, "Cập nhật thành công");
         } catch (Exception e) {
             MsgBox.alert(this, "Cập nhật thất bại");
@@ -445,13 +444,13 @@ public class QLDichVu extends javax.swing.JInternalFrame {
             txtSoLuong.requestFocus();
             return false;
         }
-        List<DichVu> list = dao.select();
-        for (int i = 0; i < list.size(); i++) {
-            if (txtMadv.getText().equalsIgnoreCase(list.get(i).getMaDV())) {
-                JOptionPane.showMessageDialog(this, "Trùng Mã Chuyên Đề", "Error", 1);
-                return false;
-            }
-        }
+//        List<DichVu> list = dao.select();
+//        for (int i = 0; i < list.size(); i++) {
+//            if (txtMadv.getText().equalsIgnoreCase(list.get(i).getMaDV())) {
+//                JOptionPane.showMessageDialog(this, "Trùng Mã Chuyên Đề", "Error", 1);
+//                return false;
+//            }
+//        }
         return true;
 
     }

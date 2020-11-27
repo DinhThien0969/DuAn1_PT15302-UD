@@ -47,6 +47,14 @@ public class DichVu {
     public void setMoTa(String MoTa) {
         this.MoTa = MoTa;
     }
-    
+    @Override
+    public String toString(){
+        return this.LoaiDV;
+    }
+    @Override
+    public boolean  equals(Object obj){
+        DichVu other = (DichVu) obj;
+        return other.getMaDV().equals(this.getMaDV());
+    }
     
 }

@@ -75,7 +75,7 @@ public class MHChinh extends javax.swing.JFrame {
         btnDangNhap.setBackground(new java.awt.Color(204, 255, 204));
         btnDangNhap.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnDangNhap.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8_enter_30px.png"))); // NOI18N
-        btnDangNhap.setText("Đăng nhập");
+        btnDangNhap.setText("Đăng xuất");
         btnDangNhap.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         btnDangNhap.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -450,7 +450,7 @@ public class MHChinh extends javax.swing.JFrame {
     }//GEN-LAST:event_mniHuongDanActionPerformed
 
     private void btnDangNhapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDangNhapActionPerformed
-        openDangNhap();
+        dangXuat();
     }//GEN-LAST:event_btnDangNhapActionPerformed
 
     private void btnMatHangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMatHangActionPerformed
@@ -560,6 +560,7 @@ public class MHChinh extends javax.swing.JFrame {
     }
     void openDangNhap() {
         new DangNhap(this, true).setVisible(true);
+        
     }
 
     void dangXuat() {

@@ -11,38 +11,18 @@ import JdbcHelper.JdbcHelper;
 
 
 public class MatHangDAO extends EduSysDAO<MatHang, String>{
-    String INSERT_SQL = "insert into MatHang (MaMH, TenMH, SoLuong, TrangThai, MaNV, MaDV) values (?,?,?,?,?,?)";
-    String UPDATE_SQL = "update MatHang set MaMH=?, TenMH = ?, SoLuong = ?, TrangThai=?, MaNV=?, MaDV=? where MaMH=?";
+    String INSERT_SQL = "insert into MatHang (MaMH, TenMH, SoLuong, DonVi, DonGia, TrangThai, MaNV, MaDV) values (?,?,?,?,?,?,?,?)";
+    String UPDATE_SQL = "update MatHang set MaMH=?, TenMH = ?, SoLuong = ?, DonVi=?, DonGia=?, TrangThai=?, MaNV=?, MaDV=? where MaMH=?";
     String DELETE_SQL = "delete from MatHang where MaMH = ?";
     String SELECT_ALL_SQL = "select * from MatHang";
     String SELECT_BY_ID_SQL = "select * from MatHang where MaMH = ?";
 
-    public List<Integer> selectYear() {
-        String sql = "select DISTINCT year(NgayKG) from KhoaHoc ORDER BY year(NgayKG) DESC";
-        List<Integer> list = new ArrayList<>();
-        try {
-            ResultSet rs = JdbcHelper.query(sql);
-            while (rs.next()) {
-                list.add(rs.getInt(1));
-
-            }
-            rs.getStatement().getConnection().close();
-            return list;
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    public List<MatHang> selectByDichVu(String madv) {
-        String sql = "select * from MatHang where MaDV=?";
-        return this.selectBySql(sql, madv);
-    }
-
+    
     @Override
     public void insert(MatHang entity) {
 
         JdbcHelper.update(INSERT_SQL,
-                entity.getMaMH(), entity.getTenMH(), entity.getSoLuong(), entity.getTrangThai(), entity.getMaDV(), entity.getMaNV());
+                entity.getMaMH(), entity.getTenMH(), entity.getSoLuong(), entity.getDonVi(), entity.getDonGia(), entity.getTrangThai(), entity.getMaDV(), entity.getMaNV());
 
     }
 
@@ -50,7 +30,7 @@ public class MatHangDAO extends EduSysDAO<MatHang, String>{
     public void update(MatHang entity) {
 
         JdbcHelper.update(UPDATE_SQL,
-                entity.getMaMH(), entity.getTenMH(), entity.getSoLuong(), entity.getTrangThai(), entity.getMaDV(), entity.getMaNV());
+                entity.getMaMH(), entity.getTenMH(), entity.getSoLuong(), entity.getDonVi(), entity.getDonGia(), entity.getTrangThai(), entity.getMaDV(), entity.getMaNV());
 
     }
 
@@ -80,9 +60,11 @@ public class MatHangDAO extends EduSysDAO<MatHang, String>{
             ResultSet rs = JdbcHelper.query(sql, args);
             while (rs.next()) {
                 MatHang entity = new MatHang();
-                entity.setMaMH(rs.getString("MaMH"));
+                entity.setMaMH(rs.getInt("MaMH"));
                 entity.setTenMH(rs.getString("TenMH"));                
                 entity.setSoLuong(rs.getInt("SoLuong"));
+                entity.setDonVi(rs.getDouble("DonVi"));
+                entity.setDonGia(rs.getDouble("DonGia"));
                 entity.setTrangThai(rs.getBoolean("TrangThai"));                
                 entity.setMaDV(rs.getString("MaDV"));
                 entity.setMaNV(rs.getString("MaNV"));
@@ -94,4 +76,26 @@ public class MatHangDAO extends EduSysDAO<MatHang, String>{
             throw new RuntimeException(e);
         }
     }
+    public List<MatHang> selectByDichVu(String madv) {
+        String sql = "select * from MatHang where MaDV=?";
+        return this.selectBySql(sql, madv);
+    }
+    
+    public List<Integer> selectYear() {
+        String sql = "select DISTINCT year(NgayKG) from KhoaHoc ORDER BY year(NgayKG) DESC";
+        List<Integer> list = new ArrayList<>();
+        try {
+            ResultSet rs = JdbcHelper.query(sql);
+            while (rs.next()) {
+                list.add(rs.getInt(1));
+
+            }
+            rs.getStatement().getConnection().close();
+            return list;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    
 }

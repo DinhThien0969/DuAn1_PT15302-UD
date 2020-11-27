@@ -3,18 +3,20 @@ package Entity;
 
 
 public class MatHang {
-    String MaMH ;
+    int MaMH ;
     String TenMH;
     int SoLuong ;
+    Double DonVi;
+    Double DonGia;
     Boolean TrangThai;
     String MaNV;
     String MaDV; 
 
-    public String getMaMH() {
+    public int getMaMH() {
         return MaMH;
     }
 
-    public void setMaMH(String MaMH) {
+    public void setMaMH(int MaMH) {
         this.MaMH = MaMH;
     }
 
@@ -32,6 +34,22 @@ public class MatHang {
 
     public void setSoLuong(int SoLuong) {
         this.SoLuong = SoLuong;
+    }
+
+    public Double getDonVi() {
+        return DonVi;
+    }
+
+    public void setDonVi(Double DonVi) {
+        this.DonVi = DonVi;
+    }
+
+    public Double getDonGia() {
+        return DonGia;
+    }
+
+    public void setDonGia(Double DonGia) {
+        this.DonGia = DonGia;
     }
 
     public Boolean getTrangThai() {
@@ -57,4 +75,8 @@ public class MatHang {
     public void setMaDV(String MaDV) {
         this.MaDV = MaDV;
     }
+
+    
+
+    
 }
