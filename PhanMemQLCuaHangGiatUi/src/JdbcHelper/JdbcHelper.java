@@ -20,6 +20,16 @@ public class JdbcHelper {
             throw new RuntimeException(e);
         }
     }
+    public static Connection getConnection(){
+        Connection cons = null;
+        try {
+            Class.forName(driver);
+            cons = DriverManager.getConnection(dburl, user, pass);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return cons;
+    }
 
     public static PreparedStatement getStmt(String sql, Object... args) throws SQLException {
         Connection conn = DriverManager.getConnection(dburl, user, pass);
@@ -58,11 +68,13 @@ public class JdbcHelper {
             PreparedStatement stmt = getStmt(sql, args);
             try {
                 stmt.execute();
+                
             } finally {
                 stmt.getConnection().close();
             }
         } catch (Exception e) {
-            throw new RuntimeException(e);
+//            throw new RuntimeException(e);
+
         }
         return 0;
 

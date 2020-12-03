@@ -11,8 +11,8 @@ import JdbcHelper.JdbcHelper;
 
 
 public class MatHangDAO extends EduSysDAO<MatHang, String>{
-    String INSERT_SQL = "insert into MatHang (MaMH, TenMH, SoLuong, DonVi, DonGia, TrangThai, MaNV, MaDV) values (?,?,?,?,?,?,?,?)";
-    String UPDATE_SQL = "update MatHang set MaMH=?, TenMH = ?, SoLuong = ?, DonVi=?, DonGia=?, TrangThai=?, MaNV=?, MaDV=? where MaMH=?";
+    String INSERT_SQL = "insert into MatHang (TenMH, SoLuong, DonVi, DonGia, TrangThai,NgayNhap, NgayXuat, MaNV, MaDV) values (?,?,?,?,?,?,?,?,?)";
+    String UPDATE_SQL = "update MatHang set MaMH=?, TenMH = ?, SoLuong = ?, DonVi=?, DonGia=?, TrangThai=?, NgayNhap=?, NgayXuat=?, MaNV=?, MaDV=? where MaMH=?";
     String DELETE_SQL = "delete from MatHang where MaMH = ?";
     String SELECT_ALL_SQL = "select * from MatHang";
     String SELECT_BY_ID_SQL = "select * from MatHang where MaMH = ?";
@@ -22,7 +22,7 @@ public class MatHangDAO extends EduSysDAO<MatHang, String>{
     public void insert(MatHang entity) {
 
         JdbcHelper.update(INSERT_SQL,
-                entity.getMaMH(), entity.getTenMH(), entity.getSoLuong(), entity.getDonVi(), entity.getDonGia(), entity.getTrangThai(), entity.getMaDV(), entity.getMaNV());
+                entity.getTenMH(), entity.getSoLuong(), entity.getDonVi(), entity.getDonGia(), entity.getTrangThai(), entity.getNgayNhap(), entity.getNgayXuat(), entity.getMaNV(), entity.getMaDV());
 
     }
 
@@ -30,7 +30,8 @@ public class MatHangDAO extends EduSysDAO<MatHang, String>{
     public void update(MatHang entity) {
 
         JdbcHelper.update(UPDATE_SQL,
-                entity.getMaMH(), entity.getTenMH(), entity.getSoLuong(), entity.getDonVi(), entity.getDonGia(), entity.getTrangThai(), entity.getMaDV(), entity.getMaNV());
+                entity.getMaMH(), entity.getTenMH(), entity.getSoLuong(), entity.getDonVi(), entity.getDonGia(),
+                entity.getTrangThai(), entity.getNgayNhap(), entity.getNgayXuat(),entity.getMaNV(), entity.getMaDV(), entity.getMaMH());
 
     }
 
@@ -65,7 +66,9 @@ public class MatHangDAO extends EduSysDAO<MatHang, String>{
                 entity.setSoLuong(rs.getInt("SoLuong"));
                 entity.setDonVi(rs.getDouble("DonVi"));
                 entity.setDonGia(rs.getDouble("DonGia"));
-                entity.setTrangThai(rs.getBoolean("TrangThai"));                
+                entity.setTrangThai(rs.getBoolean("TrangThai"));
+                entity.setNgayNhap(rs.getDate("NgayNhap"));
+                entity.setNgayXuat(rs.getDate("NgayXuat"));
                 entity.setMaDV(rs.getString("MaDV"));
                 entity.setMaNV(rs.getString("MaNV"));
                 list.add(entity);

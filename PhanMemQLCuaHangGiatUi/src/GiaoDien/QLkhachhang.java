@@ -16,12 +16,12 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author admin
  */
-public class QLKhachHang extends javax.swing.JInternalFrame {
+public class QLKhachhang extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form QLKhachHang2
      */
-    public QLKhachHang() {
+    public QLKhachhang() {
         initComponents();
         init();
     }

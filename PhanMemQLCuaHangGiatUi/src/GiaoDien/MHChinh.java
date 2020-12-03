@@ -61,9 +61,7 @@ public class MHChinh extends javax.swing.JFrame {
         mniKhachHang = new javax.swing.JMenuItem();
         mniNhanVien = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
-        mniDoanhThu = new javax.swing.JMenuItem();
         mniLuongKhachHang = new javax.swing.JMenuItem();
-        mniBangDichVu = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
         mniGioiThieu = new javax.swing.JMenuItem();
         mniHuongDan = new javax.swing.JMenuItem();
@@ -304,7 +302,7 @@ public class MHChinh extends javax.swing.JFrame {
         jMenu2.add(mniKhachHang);
 
         mniNhanVien.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F5, java.awt.event.InputEvent.CTRL_MASK));
-        mniNhanVien.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/nhanvien.png"))); // NOI18N
+        mniNhanVien.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/suanv.png"))); // NOI18N
         mniNhanVien.setText("Nhân viên");
         mniNhanVien.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -318,35 +316,15 @@ public class MHChinh extends javax.swing.JFrame {
         jMenu3.setText("Báo cáo");
         jMenu3.setAutoscrolls(true);
 
-        mniDoanhThu.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F1, java.awt.event.InputEvent.SHIFT_MASK));
-        mniDoanhThu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/doanhthu.png"))); // NOI18N
-        mniDoanhThu.setText("Doanh thu");
-        mniDoanhThu.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mniDoanhThuActionPerformed(evt);
-            }
-        });
-        jMenu3.add(mniDoanhThu);
-
         mniLuongKhachHang.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F2, java.awt.event.InputEvent.SHIFT_MASK));
-        mniLuongKhachHang.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/SLkhachhang.png"))); // NOI18N
-        mniLuongKhachHang.setText("Lượng khách hàng");
+        mniLuongKhachHang.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/baocaodichvu.png"))); // NOI18N
+        mniLuongKhachHang.setText("Biểu đồ");
         mniLuongKhachHang.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mniLuongKhachHangActionPerformed(evt);
             }
         });
         jMenu3.add(mniLuongKhachHang);
-
-        mniBangDichVu.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F3, java.awt.event.InputEvent.SHIFT_MASK));
-        mniBangDichVu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/baocaodichvu.png"))); // NOI18N
-        mniBangDichVu.setText("Bảng dịch vụ");
-        mniBangDichVu.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mniBangDichVuActionPerformed(evt);
-            }
-        });
-        jMenu3.add(mniBangDichVu);
 
         jMenuBar1.add(jMenu3);
 
@@ -429,17 +407,9 @@ public class MHChinh extends javax.swing.JFrame {
         openNhanVien();
     }//GEN-LAST:event_mniNhanVienActionPerformed
 
-    private void mniDoanhThuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniDoanhThuActionPerformed
-
-    }//GEN-LAST:event_mniDoanhThuActionPerformed
-
     private void mniLuongKhachHangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniLuongKhachHangActionPerformed
-
+        openLuongKhachHang();
     }//GEN-LAST:event_mniLuongKhachHangActionPerformed
-
-    private void mniBangDichVuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniBangDichVuActionPerformed
-
-    }//GEN-LAST:event_mniBangDichVuActionPerformed
 
     private void mniGioiThieuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniGioiThieuActionPerformed
 
@@ -525,11 +495,9 @@ public class MHChinh extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblDongHo;
     private javax.swing.JLabel lblTrangThai;
-    private javax.swing.JMenuItem mniBangDichVu;
     private javax.swing.JMenuItem mniDangNhap;
     private javax.swing.JMenuItem mniDangXuat;
     private javax.swing.JMenuItem mniDichVu;
-    private javax.swing.JMenuItem mniDoanhThu;
     private javax.swing.JMenuItem mniDoiMatKhau;
     private javax.swing.JMenuItem mniGioiThieu;
     private javax.swing.JMenuItem mniHoaDon;
@@ -629,6 +597,17 @@ public class MHChinh extends javax.swing.JFrame {
         }
         QLMatHang cd = new QLMatHang();
         cd.setTitle("Quản lý người học");
+        cd.setLocation(this.getWidth() / 2 - cd.getWidth() / 2, (this.getHeight() - 10) / 2 - cd.getHeight() / 2 - 90);
+        Destop.add(cd);
+        cd.setVisible(true);
+    }
+
+    private void openLuongKhachHang() {
+        for (JInternalFrame frmChild : Destop.getAllFrames()) {
+            frmChild.dispose();
+        }
+        ThongKe cd = new ThongKe();
+        cd.setTitle("Luong khách hàng");
         cd.setLocation(this.getWidth() / 2 - cd.getWidth() / 2, (this.getHeight() - 10) / 2 - cd.getHeight() / 2 - 90);
         Destop.add(cd);
         cd.setVisible(true);

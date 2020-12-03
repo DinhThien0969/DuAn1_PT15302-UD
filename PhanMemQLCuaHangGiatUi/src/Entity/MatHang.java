@@ -1,6 +1,8 @@
 
 package Entity;
 
+import java.util.Date;
+
 
 public class MatHang {
     int MaMH ;
@@ -9,6 +11,8 @@ public class MatHang {
     Double DonVi;
     Double DonGia;
     Boolean TrangThai;
+    Date NgayNhap;
+    Date NgayXuat;
     String MaNV;
     String MaDV; 
 
@@ -60,6 +64,22 @@ public class MatHang {
         this.TrangThai = TrangThai;
     }
 
+    public Date getNgayNhap() {
+        return NgayNhap;
+    }
+
+    public void setNgayNhap(Date NgayNhap) {
+        this.NgayNhap = NgayNhap;
+    }
+
+    public Date getNgayXuat() {
+        return NgayXuat;
+    }
+
+    public void setNgayXuat(Date NgayXuat) {
+        this.NgayXuat = NgayXuat;
+    }
+
     public String getMaNV() {
         return MaNV;
     }
@@ -75,8 +95,6 @@ public class MatHang {
     public void setMaDV(String MaDV) {
         this.MaDV = MaDV;
     }
-
-    
 
     
 }
