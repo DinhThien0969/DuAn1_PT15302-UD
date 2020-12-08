@@ -8,6 +8,7 @@ public class KhachHang {
     String DiaChi;
     int SDT;
     String GhiChu;
+    String MaNV;
 
     public String getMaKH() {
         return MaKH;
@@ -56,6 +57,15 @@ public class KhachHang {
     public void setGhiChu(String GhiChu) {
         this.GhiChu = GhiChu;
     }
+
+    public String getMaNV() {
+        return MaNV;
+    }
+
+    public void setMaNV(String MaNV) {
+        this.MaNV = MaNV;
+    }
+
     
     
 }

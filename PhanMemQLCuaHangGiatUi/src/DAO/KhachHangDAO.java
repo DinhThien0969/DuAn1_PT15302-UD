@@ -8,8 +8,8 @@ import java.util.List;
 
 public class KhachHangDAO extends EduSysDAO<KhachHang, String> {
 
-    String INSERT_SQL = "INSERT INTO KhachHang(MaKH, TenKH, GioiTinh, DiaChi, SDT, GhiChu, MaNV) VALUES(?,?,?,?,?,?,?,?)";
-    String UPDATE_SQL = "UPDATE KhachHang SET MaKH=?, TenKH=?, GioiTinh=?, DiaChi=?, SDT=?, GhiChu=? WHERE MaKH=?";
+    String INSERT_SQL = "INSERT INTO KhachHang(MaKH, TenKH, GioiTinh, DiaChi, SDT, GhiChu, MaNV) VALUES(?,?,?,?,?,?,?)";
+    String UPDATE_SQL = "UPDATE KhachHang SET MaKH=?, TenKH=?, GioiTinh=?, DiaChi=?, SDT=?, GhiChu=?, MaNV=? WHERE MaKH=?";
     String DELETE_SQL = "DELETE FROM KhachHang WHERE MaKH=?";
     String SELECT_ALL_SQL = "SELECT*FROM KhachHang";
     String SELECT_BY_ID_SQL = "SELECT*FROM KhachHang WHERE MaKH=?";
@@ -17,13 +17,13 @@ public class KhachHangDAO extends EduSysDAO<KhachHang, String> {
     @Override
     public void insert(KhachHang entity) {
         JdbcHelper.update(INSERT_SQL,
-                entity.getMaKH(), entity.getTenKH(), entity.getGioiTinh(), entity.getDiaChi(), entity.getSDT(), entity.getGhiChu());
+                entity.getMaKH(), entity.getTenKH(), entity.getGioiTinh(), entity.getDiaChi(), entity.getSDT(), entity.getGhiChu(), entity.getMaNV());
     }
 
     @Override
     public void update(KhachHang entity) {
         JdbcHelper.update(UPDATE_SQL,
-                entity.getMaKH(), entity.getTenKH(), entity.getGioiTinh(), entity.getDiaChi(), entity.getSDT(), entity.getGhiChu(), entity.getMaKH());
+                entity.getMaKH(), entity.getTenKH(), entity.getGioiTinh(), entity.getDiaChi(), entity.getSDT(), entity.getGhiChu(), entity.getMaNV(), entity.getMaKH());
     }
 
     @Override
@@ -58,7 +58,7 @@ public class KhachHangDAO extends EduSysDAO<KhachHang, String> {
                 entity.setDiaChi(rs.getString("DiaChi"));
                 entity.setSDT(rs.getInt("SDT"));
                 entity.setGhiChu(rs.getString("GhiChu"));
-
+                entity.setMaNV(rs.getString("MaNV"));
                 list.add(entity);
             }
             rs.getStatement().getConnection().close();

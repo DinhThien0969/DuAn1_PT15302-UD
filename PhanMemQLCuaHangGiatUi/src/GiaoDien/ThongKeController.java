@@ -58,7 +58,7 @@ public class ThongKeController {
                 taskSeries.add(task);
                 ds.add(taskSeries);
             }
-            JFreeChart chart = ChartFactory.createGanttChart("Thống kê tình trạng mặt hàng",
+            JFreeChart chart = ChartFactory.createGanttChart("Thống kê tình trạng mặt hàng của khách",
                     "Mặt hàng", "Thời gian", ds, true, true, true);
             ChartPanel chartPanel = new ChartPanel(chart);
             chartPanel.setPreferredSize(new Dimension(jpnItem.getWidth(), 300));

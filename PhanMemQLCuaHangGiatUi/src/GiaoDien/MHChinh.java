@@ -391,7 +391,7 @@ public class MHChinh extends javax.swing.JFrame {
     }//GEN-LAST:event_mniMatHangActionPerformed
 
     private void mniHoaDonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniHoaDonActionPerformed
-
+        openQLHoaDon();
     }//GEN-LAST:event_mniHoaDonActionPerformed
 
     private void mniDichVuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniDichVuActionPerformed
@@ -584,7 +584,7 @@ public class MHChinh extends javax.swing.JFrame {
         for (JInternalFrame frmChild : Destop.getAllFrames()) {
             frmChild.dispose();
         }
-        QLKhachHang cd = new QLKhachHang();
+        QLKhachhang cd = new QLKhachhang();
         cd.setTitle("Quản lý khach hang");
         cd.setLocation(this.getWidth() / 2 - cd.getWidth() / 2, (this.getHeight() - 10) / 2 - cd.getHeight() / 2 - 80);
         Destop.add(cd);
@@ -596,7 +596,7 @@ public class MHChinh extends javax.swing.JFrame {
             frmChild.dispose();
         }
         QLMatHang cd = new QLMatHang();
-        cd.setTitle("Quản lý người học");
+        cd.setTitle("Quản lý mặt hàng");
         cd.setLocation(this.getWidth() / 2 - cd.getWidth() / 2, (this.getHeight() - 10) / 2 - cd.getHeight() / 2 - 90);
         Destop.add(cd);
         cd.setVisible(true);
@@ -608,6 +608,17 @@ public class MHChinh extends javax.swing.JFrame {
         }
         ThongKe cd = new ThongKe();
         cd.setTitle("Luong khách hàng");
+        cd.setLocation(this.getWidth() / 2 - cd.getWidth() / 2, (this.getHeight() - 10) / 2 - cd.getHeight() / 2 - 90);
+        Destop.add(cd);
+        cd.setVisible(true);
+    }
+
+    private void openQLHoaDon() {
+        for (JInternalFrame frmChild : Destop.getAllFrames()) {
+            frmChild.dispose();
+        }
+        QLHoaDon cd = new QLHoaDon();
+        cd.setTitle("Quản lý hóa đơn");
         cd.setLocation(this.getWidth() / 2 - cd.getWidth() / 2, (this.getHeight() - 10) / 2 - cd.getHeight() / 2 - 90);
         Destop.add(cd);
         cd.setVisible(true);
