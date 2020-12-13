@@ -11,7 +11,7 @@ public class JdbcHelper {
     static String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
     static String dburl = "jdbc:sqlserver://localhost:1433;database=QLGiatUi";
     static String user = "sa";
-    static String pass = "12345";
+    static String pass = "123456";
 
     static {
         try {

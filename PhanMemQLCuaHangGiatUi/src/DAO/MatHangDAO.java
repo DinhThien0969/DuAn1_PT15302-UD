@@ -76,6 +76,7 @@ public class MatHangDAO extends EduSysDAO<MatHang, String>{
             rs.getStatement().getConnection().close();
             return list;
         } catch (Exception e) {
+            e.printStackTrace();
             throw new RuntimeException(e);
         }
     }

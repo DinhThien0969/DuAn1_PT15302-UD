@@ -1,24 +1,10 @@
 package de.vogella.itext.write;
 
 import java.io.FileOutputStream;
-import java.util.Date;
-
-import com.itextpdf.text.Anchor;
-import com.itextpdf.text.BadElementException;
-import com.itextpdf.text.BaseColor;
-import com.itextpdf.text.Chapter;
 import com.itextpdf.text.Document;
-import com.itextpdf.text.DocumentException;
-import com.itextpdf.text.Element;
 import com.itextpdf.text.Font;
-import com.itextpdf.text.List;
-import com.itextpdf.text.ListItem;
 import com.itextpdf.text.Paragraph;
-import com.itextpdf.text.Phrase;
-import com.itextpdf.text.Section;
 import com.itextpdf.text.pdf.BaseFont;
-import com.itextpdf.text.pdf.PdfPCell;
-import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
 import java.nio.charset.StandardCharsets;
 
@@ -43,7 +29,7 @@ public class PDF {
         this.document = new Document();
         try {
             StandardCharsets.UTF_8.name();
-            this.catFont = new Font(BaseFont.createFont("D:/vuArial.ttf", BaseFont.IDENTITY_H, BaseFont.EMBEDDED));
+            this.catFont = new Font(BaseFont.createFont("G:/vuArial.ttf", BaseFont.IDENTITY_H, BaseFont.EMBEDDED));
             this.catFont.setStyle(Font.NORMAL);
             PdfWriter.getInstance(document, new FileOutputStream(FILE));
             document.open();
