@@ -67,13 +67,13 @@ public class QLNhanVien extends javax.swing.JInternalFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblNhanVien = new javax.swing.JTable();
 
+        setClosable(true);
+
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(51, 51, 255));
         jLabel1.setText("QUẢN LÝ NHÂN VIÊN");
 
         tab.setBackground(new java.awt.Color(102, 102, 255));
-
-        jPanel1.setBackground(new java.awt.Color(204, 255, 204));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setText("Mã nhân viên");
@@ -411,7 +411,7 @@ public class QLNhanVien extends javax.swing.JInternalFrame {
                     nv.getSDT(),
                     nv.getEmail(),
                     nv.getDiaChi(),
-                    nv.getVaiTro() ? "Nhan vien" : "Quan ly"
+                    nv.getVaiTro() ? "Quan ly" : "Nhan Vien"
                 };
                 model.addRow(row);
             }
@@ -501,8 +501,8 @@ public class QLNhanVien extends javax.swing.JInternalFrame {
         txtSDT.setText(String.valueOf(nv.getSDT()));
         txtEmail.setText(nv.getEmail());
         txtDiaChi.setText(nv.getDiaChi());
-        rdoNhanVien.setSelected(nv.getVaiTro());
-        rdoQuanLy.setSelected(!nv.getVaiTro());
+        rdoNhanVien.setSelected(!nv.getVaiTro());
+        rdoQuanLy.setSelected(nv.getVaiTro());
 
     }
 
@@ -516,7 +516,7 @@ public class QLNhanVien extends javax.swing.JInternalFrame {
         nv.setSDT(new Integer(txtSDT.getText()));
         nv.setEmail(txtEmail.getText());
         nv.setDiaChi(txtDiaChi.getText());
-        nv.setVaiTro(rdoNhanVien.isSelected());
+        nv.setVaiTro(rdoQuanLy.isSelected());
         return nv;
     }
 

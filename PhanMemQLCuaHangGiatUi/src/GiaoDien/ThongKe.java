@@ -27,6 +27,8 @@ public class ThongKe extends javax.swing.JInternalFrame {
         jpnView1 = new javax.swing.JPanel();
         jpnView2 = new javax.swing.JPanel();
 
+        setClosable(true);
+
         javax.swing.GroupLayout jpnView1Layout = new javax.swing.GroupLayout(jpnView1);
         jpnView1.setLayout(jpnView1Layout);
         jpnView1Layout.setHorizontalGroup(

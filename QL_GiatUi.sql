@@ -87,7 +87,8 @@ CREATE TABLE HoaDonCT
 	SoLuong INT NOT NULL,
 	PRIMARY KEY(MaHDCT),
 	FOREIGN KEY(MaHD) REFERENCES dbo.HoaDon(MaHD) ON DELETE NO ACTION ON UPDATE CASCADE,
-	FOREIGN KEY(MaMH) REFERENCES dbo.MatHang(MaMH) ON DELETE CASCADE  ON UPDATE NO ACTION	
+	FOREIGN KEY(MaMH) REFERENCES dbo.MatHang(MaMH) ON DELETE CASCADE  ON UPDATE NO ACTION
+	
 )
 
 DELETE FROM dbo.NhanVien
@@ -111,35 +112,49 @@ INSERT INTO dbo.KhachHang VALUES  ( N'KH0005' ,N'Lê Thị Hương' ,0 ,N'Dịch
 INSERT INTO dbo.KhachHang VALUES  ( N'KH0006' ,N'Nguyễn Văn Đức' ,1 ,N'Bồ Đề - Duy Tiên - Hà Nam' ,0969753187 ,N'....' ,N'NV002')
 
 DELETE FROM dbo.MatHang
-INSERT INTO dbo.MatHang VALUES  (N'Áo phông' ,2, 1,6.5, 60000 , N'2019-02-01', N'2019-12-05',N'NV002' ,N'DV03')
-INSERT INTO dbo.MatHang VALUES  (N'Áo khoác' ,2, 1,8.5, 50000  , N'2019-01-20', N'2019-11-14',N'NV002' ,N'DV03')
-INSERT INTO dbo.MatHang VALUES  (N'Quần jean' ,2, 1,6.5, 40000  , N'2019-05-15', N'2019-10-09',N'NV001' ,N'DV04')
-INSERT INTO dbo.MatHang VALUES  (N'Chăn bông' ,2, 1,4.5, 20000 , N'2019-04-11', N'2019-12-10',N'NV001' ,N'DV04')
-INSERT INTO dbo.MatHang VALUES  (N'Màn, Gối' ,2, 0,2.5, 30000 , N'2019-02-01', N'2019-11-25',N'NV003' ,N'DV02')
-INSERT INTO dbo.MatHang VALUES  (N'Những đồ màu trắng' ,2, 0,10, 30000 , N'2019-06-05', N'2019-10-13',N'NV003' ,N'DV01')
-INSERT INTO dbo.MatHang VALUES  (N'Những đồ màu đen' ,2, 0,4.5, 60000 , N'2019-05-17', N'2019-12-07',N'NV004' ,N'DV05')
+INSERT INTO dbo.MatHang VALUES  (N'Áo phông' ,2, 6.5, 60000 ,1, N'2019-02-01', GETDATE(),N'NV002' ,N'DV03')
+INSERT INTO dbo.MatHang VALUES  (N'Áo khoác' ,7, 8.5, 50000 ,1, N'2019-01-20', GETDATE(),N'NV002' ,N'DV03')
+INSERT INTO dbo.MatHang VALUES  (N'Quần jean' ,5, 6.5, 40000,1, N'2019-05-15', GETDATE(),N'NV001' ,N'DV04')
+INSERT INTO dbo.MatHang VALUES  (N'Chăn bông' ,2, 4.5, 20000 ,1, N'2019-04-11', GETDATE(),N'NV001' ,N'DV04')
+INSERT INTO dbo.MatHang VALUES  (N'Màn, Gối' ,3, 2.5, 30000 ,0, N'2019-02-01', GETDATE(),N'NV003' ,N'DV02')
+INSERT INTO dbo.MatHang VALUES  (N'Những đồ màu trắng' ,2, 10, 30000 ,0, N'2019-06-05', GETDATE(),N'NV003' ,N'DV01')
+INSERT INTO dbo.MatHang VALUES  (N'Những đồ màu đen' ,10, 4.5, 60000 ,0, N'2019-05-17', GETDATE(),N'NV004' ,N'DV05')
 
 DELETE FROM dbo.HoaDon
-INSERT INTO dbo.HoaDon VALUES  ( N'HD02' ,GETDATE() ,N'07-08-2020' ,1 ,0.0 ,N'NV001' ,N'KH0004')
-INSERT INTO dbo.HoaDon VALUES  ( N'HD03' ,GETDATE() ,N'07-08-2020' ,1 ,0.0 ,N'NV002' ,N'KH0001')
-INSERT INTO dbo.HoaDon VALUES  ( N'HD04' ,GETDATE() ,N'07-08-2020',0 ,0.0 ,N'NV002' ,N'KH0005')
-INSERT INTO dbo.HoaDon VALUES  ( N'HD05' ,GETDATE() ,N'07-08-2020' ,0 ,0.0 ,N'NV004' ,N'KH0006')
-INSERT INTO dbo.HoaDon VALUES  ( N'HD06' ,GETDATE() ,N'07-08-2020'  ,0 ,0.0 ,N'NV004' ,N'KH0001')
-INSERT INTO dbo.HoaDon VALUES  ( N'HD07' ,GETDATE() ,N'07-08-2020' ,0 ,0.0 ,N'NV001' ,N'KH0002')
-INSERT INTO dbo.HoaDon VALUES  ( N'HD08' ,GETDATE() ,N'07-08-2020' ,0 ,0.0 ,N'NV002' ,N'KH0002')
-INSERT INTO dbo.HoaDon VALUES  ( N'HD09' ,GETDATE() ,N'07-08-2020' ,0 ,0.0 ,N'NV001' ,N'KH0006')
+INSERT INTO dbo.HoaDon VALUES  ( N'HD02' ,N'2020-08-03' ,GETDATE() ,1 ,0.0 ,N'NV001' ,N'KH0004')
+INSERT INTO dbo.HoaDon VALUES  ( N'HD03' ,N'2020-08-03' ,GETDATE() ,1 ,0.0 ,N'NV002' ,N'KH0001')
+INSERT INTO dbo.HoaDon VALUES  ( N'HD04' ,N'2020-05-20' ,GETDATE(),0 ,0.0 ,N'NV002' ,N'KH0005')
+INSERT INTO dbo.HoaDon VALUES  ( N'HD05' ,N'2020-09-07' ,GETDATE() ,0 ,0.0 ,N'NV004' ,N'KH0006')
+INSERT INTO dbo.HoaDon VALUES  ( N'HD06' ,N'2020-09-07' ,GETDATE()  ,0 ,0.0 ,N'NV004' ,N'KH0001')
+INSERT INTO dbo.HoaDon VALUES  ( N'HD07' ,N'2020-06-25' ,GETDATE() ,0 ,0.0 ,N'NV001' ,N'KH0002')
+INSERT INTO dbo.HoaDon VALUES  ( N'HD08' ,N'2020-10-05' ,GETDATE() ,0 ,0.0 ,N'NV002' ,N'KH0002')
+INSERT INTO dbo.HoaDon VALUES  ( N'HD09' ,N'2020-10-05' ,GETDATE() ,0 ,0.0 ,N'NV001' ,N'KH0006')
 
 DELETE FROM dbo.HoaDonCT
 INSERT INTO dbo.HoaDonCT VALUES  ( N'HD03',5,2 )
-INSERT INTO dbo.HoaDonCT VALUES  ( N'HD04',1,2 )
-INSERT INTO dbo.HoaDonCT VALUES  ( N'HD09',6,2 )
+INSERT INTO dbo.HoaDonCT VALUES  ( N'HD04',1,10 )
+INSERT INTO dbo.HoaDonCT VALUES  ( N'HD09',6,5 )
 INSERT INTO dbo.HoaDonCT VALUES  ( N'HD05',7,2 )
 
+---Truy vấn
+---Báo cáo thống kê
 SELECT NgayNhan, COUNT(*) FROM dbo.HoaDon 
 GROUP BY NgayNhan
 SELECT TenMH, NgayNhap, NgayXuat FROM dbo.MatHang WHERE TrangThai = 1
----Truy vấn
-SELECT HoaDon.MaHD, TenKH, KhachHang.SDT, KhachHang.DiaChi, TenMH, MatHang.SoLuong, LoaiDV, DichVu.DonGia, TenNV, HoaDon.TrangThai,
-NgayNhan, NgayTra, MatHang.SoLuong*DichVu.DonGia AS ThanhTien FROM dbo.HoaDon JOIN dbo.KhachHang ON KhachHang.MaKH = HoaDon.MaKH
-JOIN dbo.NhanVien ON NhanVien.MaNV = HoaDon.MaNV JOIN dbo.HoaDonCT ON HoaDonCT.MaHD = HoaDon.MaHD 
-JOIN dbo.MatHang ON MatHang.MaMH = HoaDonCT.MaMH JOIN dbo.DichVu ON DichVu.MaDV = MatHang.MaDV
+--- fillTable Hoa Don
+SELECT dbo.HoaDonCT.MaHD, TenKH, KhachHang.SDT, KhachHang.DiaChi, TenMH, MatHang.SoLuong, LoaiDV, DichVu.DonGia, TenNV, HoaDon.TrangThai,
+NgayNhan, NgayTra, MatHang.SoLuong*DichVu.DonGia AS ThanhTien FROM dbo.HoaDon 
+JOIN dbo.HoaDonCT ON HoaDonCT.MaHD = HoaDon.MaHD
+JOIN dbo.MatHang ON MatHang.MaNV = HoaDon.MaNV
+JOIN dbo.KhachHang ON KhachHang.MaKH = HoaDon.MaKH
+JOIN dbo.NhanVien ON NhanVien.MaNV = HoaDon.MaNV 
+JOIN dbo.DichVu ON DichVu.MaDV = MatHang.MaDV
+--- fillTable Khách hàng
+SELECT KhachHang.MaKH, MaHD,TenKH, GioiTinh, DiaChi, NgayTra FROM dbo.KhachHang
+JOIN dbo.HoaDon ON HoaDon.MaKH = KhachHang.MaKH
+--- fillTable Mặt hàng
+SELECT * FROM dbo.MatHang
+--- fillTable dịch vụ
+SELECT * FROM dbo.DichVu
+--- fillTable Nhân viên
+SELECT MaNV, TenNV, GioiTinh, SDT, Email, DiaChi, VaiTro FROM dbo.NhanVien

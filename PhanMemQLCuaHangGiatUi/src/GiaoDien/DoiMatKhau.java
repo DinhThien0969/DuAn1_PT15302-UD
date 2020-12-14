@@ -18,6 +18,7 @@ public class DoiMatKhau extends javax.swing.JInternalFrame {
     /**
      * Creates new form DoiMatKhau2
      */
+    NhanVienDAO dao = new NhanVienDAO();
     public DoiMatKhau() {
         initComponents();        
     }
@@ -164,8 +165,7 @@ public class DoiMatKhau extends javax.swing.JInternalFrame {
     private javax.swing.JPasswordField txtMatKhauMoi;
     private javax.swing.JPasswordField txtMatKhauMoi1;
     // End of variables declaration//GEN-END:variables
-       
-    NhanVienDAO dao = new NhanVienDAO();
+              
     private void doiMatKhau() {
         /*4 dòng mã đầu tiên là thu nhận dữ liệu trên form*/
         String manv = txtMaNV.getText();
@@ -174,16 +174,13 @@ public class DoiMatKhau extends javax.swing.JInternalFrame {
         String matKhauMoi1 = new String(txtMatKhauMoi1.getPassword());
 
         if(!manv.equalsIgnoreCase(Auth.user.getMaNV())){//kiểm tra xem mã nhân viên có giống với người đăng nhập hay ko
-            MsgBox.alert(this, "Sai mã nhân viên!");//nếu ko giống nhau thì hiện thị sai tên đăng nhập
-            txtMaNV.requestFocus();
+            MsgBox.alert(this, "Sai tên đăng nhập!");//nếu ko giống nhau thì hiện thị sai tên đăng nhập
         }
         else if(!matKhau.equals(Auth.user.getMatKhau())){//kiêm tra xem mật khẩu có giống với Mk người đăng nhâp hay ko
             MsgBox.alert(this, "Sai mật khẩu!");//nếu ko giống thông báo sai mật khẩu
-            txtMatKhau.requestFocus();
         }
         else if(!matKhauMoi.equals(matKhauMoi1)){//kiểm tra xem 2 mật khẩu mới có giống nhau ko
             MsgBox.alert(this, "Xác nhận mật khẩu không đúng!");//nếu ko trùng khớp thì thông báo MK mới ko đúng
-            txtMatKhauMoi1.requestFocus();
         }
         else{
             //nếu giống nhau

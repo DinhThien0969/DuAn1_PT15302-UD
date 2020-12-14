@@ -71,4 +71,35 @@ public class DichVuDAO extends EduSysDAO<DichVu, String> {
             List<DichVu> list = selectBySql(sql, madv);
             return list.size() > 0 ? list.get(0) : null;
         }
+      
+      public List<Object[]> getDichVu() {
+        List<Object[]> list = new ArrayList<>();
+        try {
+            ResultSet rs = null;
+            try {
+                String sql = "SELECT * FROM dbo.DichVu";
+                rs = JdbcHelper.query(sql);
+                while (rs.next()) {
+                    Object[] model = {
+                        rs.getString("MaDV"),
+                        rs.getString("LoaiDV"),
+                        rs.getDouble("DonVi"),
+                        rs.getDouble("DonGia"),
+                        rs.getString("MoTa")                        
+                    };
+                    list.add(model);
+
+                }
+            } finally {
+                rs.getStatement().getConnection().close();
+
+            }
+        } catch (SQLException ex) {
+            throw new RuntimeException(ex);
+
+        }
+        return list;
+
+    }
 }
+

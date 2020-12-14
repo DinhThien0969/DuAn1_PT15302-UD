@@ -3,6 +3,7 @@ package DAO;
 import Entity.KhachHang;
 import JdbcHelper.JdbcHelper;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -66,6 +67,38 @@ public class KhachHangDAO extends EduSysDAO<KhachHang, String> {
         } catch (Exception e) {
             throw new RuntimeException();
         }
+    }
+
+    public List<Object[]> getKhachHang() {
+        List<Object[]> list = new ArrayList<>();
+        try {
+            ResultSet rs = null;
+            try {
+                String sql = "SELECT KhachHang.MaKH, MaHD,TenKH, GioiTinh, DiaChi, NgayTra FROM dbo.KhachHang\n"
+                        + "JOIN dbo.HoaDon ON HoaDon.MaKH = KhachHang.MaKH";
+                rs = JdbcHelper.query(sql);
+                while (rs.next()) {
+                    Object[] model = {
+                        rs.getString("MaKH"),
+                        rs.getString("MaHD"),
+                        rs.getString("TenKH"),
+                        rs.getBoolean("GioiTinh"),                      
+                        rs.getString("DiaChi"),                        
+                        rs.getDate("NgayTra"),                        
+                    };
+                    list.add(model);
+
+                }
+            } finally {
+                rs.getStatement().getConnection().close();
+
+            }
+        } catch (SQLException ex) {
+            throw new RuntimeException(ex);
+
+        }
+        return list;
+
     }
 
 }

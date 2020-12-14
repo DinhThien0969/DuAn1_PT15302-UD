@@ -3,6 +3,7 @@ package DAO;
 import JdbcHelper.JdbcHelper;
 import Entity.NhanVien;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -72,4 +73,36 @@ public class NhanVienDAO extends EduSysDAO<NhanVien, String> {
         }
     }
 
+    public List<Object[]> getNhanVien() {
+        List<Object[]> list = new ArrayList<>();
+        try {
+            ResultSet rs = null;
+            try {
+                String sql = "SELECT MaNV, TenNV, GioiTinh, SDT, Email, DiaChi, VaiTro FROM dbo.NhanVien";
+                rs = JdbcHelper.query(sql);
+                while (rs.next()) {
+                    Object[] model = {
+                        rs.getString("MaNV"),
+                        rs.getString("TenNV"),
+                        rs.getBoolean("GioiTinh"),
+                        rs.getInt("SDT"),
+                        rs.getString("Email"),
+                        rs.getString("DiaChi"),
+                        rs.getBoolean("VaiTro")                        
+                    };
+                    list.add(model);
+
+                }
+            } finally {
+                rs.getStatement().getConnection().close();
+
+            }
+        } catch (SQLException ex) {
+            throw new RuntimeException(ex);
+
+        }
+        return list;
+
+    }
+    
 }

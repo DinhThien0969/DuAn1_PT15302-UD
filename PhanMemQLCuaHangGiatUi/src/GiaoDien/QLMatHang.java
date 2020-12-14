@@ -75,6 +75,8 @@ public class QLMatHang extends javax.swing.JInternalFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         tblMatHang = new javax.swing.JTable();
 
+        setClosable(true);
+
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(51, 51, 255));
         jLabel1.setText("QUẢN LÝ MẶT HÀNG");
