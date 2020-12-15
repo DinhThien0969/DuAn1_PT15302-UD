@@ -9,6 +9,8 @@ public class HoaDon {
     Date NgayTra;
     Boolean TrangThai;
     Double ThanhTien;
+    String MaNV;
+    String MaKH;
 
     public String getMaHD() {
         return MaHD;
@@ -49,6 +51,23 @@ public class HoaDon {
     public void setThanhTien(Double ThanhTien) {
         this.ThanhTien = ThanhTien;
     }
+
+    public String getMaNV() {
+        return MaNV;
+    }
+
+    public void setMaNV(String MaNV) {
+        this.MaNV = MaNV;
+    }
+
+    public String getMaKH() {
+        return MaKH;
+    }
+
+    public void setMaKH(String MaKH) {
+        this.MaKH = MaKH;
+    }
+
     
     
 }

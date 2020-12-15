@@ -142,7 +142,7 @@ SELECT NgayNhan, COUNT(*) FROM dbo.HoaDon
 GROUP BY NgayNhan
 SELECT TenMH, NgayNhap, NgayXuat FROM dbo.MatHang WHERE TrangThai = 1
 --- fillTable Hoa Don
-SELECT dbo.HoaDonCT.MaHD, TenKH, KhachHang.SDT, KhachHang.DiaChi, TenMH, MatHang.SoLuong, LoaiDV, DichVu.DonGia, TenNV, HoaDon.TrangThai,
+SELECT dbo.HoaDonCT.MaHD,HoaDon.MaNV, HoaDon.MaKH, TenKH, KhachHang.SDT, KhachHang.DiaChi, TenMH, MatHang.SoLuong, LoaiDV, DichVu.DonGia, TenNV, HoaDon.TrangThai,
 NgayNhan, NgayTra, MatHang.SoLuong*DichVu.DonGia AS ThanhTien FROM dbo.HoaDon 
 JOIN dbo.HoaDonCT ON HoaDonCT.MaHD = HoaDon.MaHD
 JOIN dbo.MatHang ON MatHang.MaNV = HoaDon.MaNV

@@ -45,10 +45,10 @@ public class QLDichVu extends javax.swing.JInternalFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         txtloaiDV = new javax.swing.JTextField();
-        txtDonGia = new javax.swing.JTextField();
+        txtDonvi = new javax.swing.JTextField();
         txtMadv = new javax.swing.JTextField();
         txtMoTa = new javax.swing.JTextField();
-        txtSoLuong = new javax.swing.JTextField();
+        txtDonGia = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         btnThem1 = new javax.swing.JButton();
         btnSua1 = new javax.swing.JButton();
@@ -69,10 +69,10 @@ public class QLDichVu extends javax.swing.JInternalFrame {
         jLabel2.setText("Loại dịch vụ");
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
-        jLabel3.setText("Đơn giá");
+        jLabel3.setText("Đơn vị");
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
-        jLabel4.setText("Số lượng");
+        jLabel4.setText("Đơn giá");
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLabel5.setText("Mã dịch vụ");
@@ -86,9 +86,9 @@ public class QLDichVu extends javax.swing.JInternalFrame {
             }
         });
 
-        txtDonGia.addActionListener(new java.awt.event.ActionListener() {
+        txtDonvi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtDonGiaActionPerformed(evt);
+                txtDonviActionPerformed(evt);
             }
         });
 
@@ -175,8 +175,8 @@ public class QLDichVu extends javax.swing.JInternalFrame {
                                 .addGap(10, 10, 10)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(txtMoTa, javax.swing.GroupLayout.DEFAULT_SIZE, 507, Short.MAX_VALUE)
-                                    .addComponent(txtSoLuong)
                                     .addComponent(txtDonGia)
+                                    .addComponent(txtDonvi)
                                     .addComponent(txtloaiDV)
                                     .addComponent(txtMadv)))
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -200,11 +200,11 @@ public class QLDichVu extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtDonGia, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtDonvi, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtSoLuong, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtDonGia, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -224,7 +224,7 @@ public class QLDichVu extends javax.swing.JInternalFrame {
                 {null, null, null, null, null}
             },
             new String [] {
-                "Mã dịch vụ", "Loại dịch vụ", "Đơn giá", "Số lượng", "Mô tả"
+                "Mã dịch vụ", "Loại dịch vụ", "Đơn vị", "Đơn giá", "Mô tả"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -285,9 +285,9 @@ public class QLDichVu extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtloaiDVActionPerformed
 
-    private void txtDonGiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDonGiaActionPerformed
+    private void txtDonviActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDonviActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtDonGiaActionPerformed
+    }//GEN-LAST:event_txtDonviActionPerformed
 
     private void btnThem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThem1ActionPerformed
         insert();
@@ -331,9 +331,9 @@ public class QLDichVu extends javax.swing.JInternalFrame {
     private javax.swing.JTabbedPane tab;
     private javax.swing.JTable tbldichvu;
     private javax.swing.JTextField txtDonGia;
+    private javax.swing.JTextField txtDonvi;
     private javax.swing.JTextField txtMadv;
     private javax.swing.JTextField txtMoTa;
-    private javax.swing.JTextField txtSoLuong;
     private javax.swing.JTextField txtloaiDV;
     // End of variables declaration//GEN-END:variables
 
@@ -344,7 +344,7 @@ public class QLDichVu extends javax.swing.JInternalFrame {
 
         this.fillTable();
         this.row = -1;
-//        this.updateStatus();
+        this.updateStatus();
     }
 
     void fillTable() {
@@ -355,7 +355,7 @@ public class QLDichVu extends javax.swing.JInternalFrame {
             for (DichVu nv : list) {
                 Object[] row = {
                     nv.getMaDV(),
-                    nv.getLoaiDV(),
+                    nv.getLoaiDV(),                    
                     nv.getDonVi(),
                     nv.getDonGia(),
                     nv.getMoTa(),};
@@ -393,14 +393,9 @@ public class QLDichVu extends javax.swing.JInternalFrame {
     }
 
     void delete() {
-        if (Auth.isManager()) {//kiểm tra xem có phải là trưởng phòng hay không
-            //Nếu là trưởng phòng thì..
-            String madv = txtMadv.getText();//lấy mã nhân viên
-            if (madv.equals(Auth.user.getMaNV())) {//kiểm tra mã nhân viên có trùng với mã nhân viên lấy bên trên hay không
-                MsgBox.alert(this, "Bạn không được xóa chính bạn");//nếu trùng thì thông báo...
-            } //trường hợp còn lại
-            else if (MsgBox.confirm(this, "Bạn thực sự muốn xóa nhân viên này")) {
-                try {
+        String madv = txtMadv.getText();
+        if(MsgBox.confirm(this, "Bạn thực sự muốn xóa?")){
+            try {
                     dao.delete(madv);//xóa nhân viên từ mã nhân viên được lấy bên trên
                     this.fillTable();//Cập nhật, đổ lại dữ liệu lên bảng
                     this.clearForm();//Làm lại form
@@ -409,18 +404,15 @@ public class QLDichVu extends javax.swing.JInternalFrame {
                     e.printStackTrace();
                     MsgBox.alert(this, "Xóa thất bại");
                 }
-            }
-
-        } else {
-            MsgBox.alert(this, "Bạn không có quyền xóa nhân viên");//Trưởng phòng mới đc xóa
         }
+                                   
     }
 
     void clearForm() {//xóa trắng form       
         txtMadv.setText(null);
         txtloaiDV.setText(null);
-        txtSoLuong.setText(null);
         txtDonGia.setText(null);
+        txtDonvi.setText(null);
         txtMoTa.setText(null);
         this.row = -1;
         this.updateStatus();
@@ -428,21 +420,21 @@ public class QLDichVu extends javax.swing.JInternalFrame {
     }
 
     private boolean check() {
-        if (txtMadv.getText().equals("") || txtloaiDV.getText().equals("") || txtDonGia.getText().equals("")
-                || txtSoLuong.getText().equals("") || txtMoTa.getText().equals("")) {
+        if (txtMadv.getText().equals("") || txtloaiDV.getText().equals("") || txtDonvi.getText().equals("")
+                || txtDonGia.getText().equals("") || txtMoTa.getText().equals("")) {
             JOptionPane.showMessageDialog(rootPane, "Hãy nhập đủ dữ liệu sau đó ấn Save", "Error", 1);
             return false;
         } else if (!(txtMadv.getText()).matches("DV[0-9]{1,9}")) {
             JOptionPane.showMessageDialog(rootPane, "Sai định dạng mã \n VD : DV01", "Error", 1);
             txtMadv.requestFocus();
             return false;
-        } else if (!(txtDonGia.getText()).matches("[0-9]{1,99999}")) {
+        } else if (!(txtDonvi.getText()).matches("[0-9]{1,99999}")) {
             JOptionPane.showMessageDialog(rootPane, "Thời lượng phải nhập số dương", "Error", 1);
-            txtDonGia.requestFocus();
+            txtDonvi.requestFocus();
             return false;
-        } else if (!(txtSoLuong.getText()).matches("[0-9]{1,99999}")) {
+        } else if (!(txtDonGia.getText()).matches("[0-9]{1,99999}")) {
             JOptionPane.showMessageDialog(rootPane, "Học phí phải nhập số dương", "Error", 1);
-            txtSoLuong.requestFocus();
+            txtDonGia.requestFocus();
             return false;
         }
 //        List<DichVu> list = dao.select();
@@ -461,14 +453,14 @@ public class QLDichVu extends javax.swing.JInternalFrame {
         DichVu dv = dao.selectById(manv);//Vào trong CSDL lấy mã nhân viên tương ứng với mã nv vừa chọn bên trên
         this.setForm(dv);//và hiện thị thông tin của mã nhân viên đó lên form
         tab.setSelectedIndex(0);//Sau khi click vào hàng được chọn thì sẽ di chuyển sang bên form
-        //this.updateStatus();//Cập nhật lại trạng thái các nút
+        this.updateStatus();//Cập nhật lại trạng thái các nút
     }
 
     void setForm(DichVu nv) {//Lấy thông tin của một nhân viên có sẵn hiển thị lên form
         txtMadv.setText(nv.getMaDV());
         txtloaiDV.setText(nv.getLoaiDV());
-        txtSoLuong.setText(String.valueOf(nv.getDonVi()));
         txtDonGia.setText(String.valueOf(nv.getDonGia()));
+        txtDonvi.setText(String.valueOf(nv.getDonVi()));
         txtMoTa.setText(nv.getMoTa());
 
     }
@@ -479,7 +471,7 @@ public class QLDichVu extends javax.swing.JInternalFrame {
         dv.setMaDV(txtMadv.getText());
         dv.setLoaiDV(txtloaiDV.getText());
         dv.setDonGia(Double.valueOf(txtDonGia.getText()));
-        dv.setDonVi(Double.valueOf(txtSoLuong.getText()));
+        dv.setDonVi(Double.valueOf(txtDonvi.getText()));
         dv.setMoTa(txtMoTa.getText());
         return dv;
     }
@@ -489,8 +481,8 @@ public class QLDichVu extends javax.swing.JInternalFrame {
         //Trạng thái form
         txtMadv.setEditable(!edit);
         btnThem1.setEnabled(!edit);
-        btnSua1.setEnabled(!edit);
-        btnXoa1.setEnabled(!edit);
+        btnSua1.setEnabled(edit);
+        btnXoa1.setEnabled(edit);
 
     }
 }

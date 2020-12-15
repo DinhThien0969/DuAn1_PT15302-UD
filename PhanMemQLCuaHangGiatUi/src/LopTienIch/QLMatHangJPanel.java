@@ -409,7 +409,7 @@ public class QLMatHangJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnXoaActionPerformed
 
     private void tblMatHangMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblMatHangMouseClicked
-        if (evt.getClickCount() == 1) {
+        if (evt.getClickCount() == 2) {
             this.row = tblMatHang.getSelectedRow();
             this.edit();
         }

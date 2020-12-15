@@ -271,7 +271,6 @@ public class QLNhanVien extends javax.swing.JInternalFrame {
 
         tab.addTab("Thông tin nhân viên", jPanel1);
 
-        tblNhanVien.setBackground(new java.awt.Color(204, 255, 255));
         tblNhanVien.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null},
@@ -282,7 +281,15 @@ public class QLNhanVien extends javax.swing.JInternalFrame {
             new String [] {
                 "Mã NV", "Tên NV", "Giới tính", "Mật khẩu", "SĐT", "Email", "Địa chỉ", "Vai trò"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         tblNhanVien.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tblNhanVienMouseClicked(evt);
@@ -346,7 +353,7 @@ public class QLNhanVien extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnXoaActionPerformed
 
     private void tblNhanVienMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblNhanVienMouseClicked
-        if (evt.getClickCount() == 1) {
+        if (evt.getClickCount() == 2) {
             this.row = tblNhanVien.getSelectedRow();
             this.edit();
         }

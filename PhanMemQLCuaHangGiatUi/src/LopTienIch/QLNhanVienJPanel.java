@@ -277,7 +277,15 @@ public class QLNhanVienJPanel extends javax.swing.JPanel {
             new String [] {
                 "Mã NV", "Tên NV", "Giới tính", "Mật khẩu", "SĐT", "Email", "Địa chỉ", "Vai trò"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         tblNhanVien.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tblNhanVienMouseClicked(evt);
@@ -371,7 +379,7 @@ public class QLNhanVienJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnXoaActionPerformed
 
     private void tblNhanVienMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblNhanVienMouseClicked
-        if (evt.getClickCount() == 1) {
+        if (evt.getClickCount() == 2) {
             this.row = tblNhanVien.getSelectedRow();
             this.edit();
         }

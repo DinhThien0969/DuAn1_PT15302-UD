@@ -63,7 +63,7 @@ public class FillBangDichVu extends javax.swing.JPanel {
                 {null, null, null, null, null}
             },
             new String [] {
-                "Mã DV", "Loai DV", "Đơn vị", "Đơ giá", "Mô tả"
+                "Mã DV", "Loai DV", "Đơn vị", "Đơn giá", "Mô tả"
             }
         ) {
             boolean[] canEdit = new boolean [] {

@@ -409,7 +409,7 @@ public class QLKhachHangJPanel extends javax.swing.JPanel {
 
     private void tblkhachhangMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblkhachhangMouseClicked
         // TODO add your handling code here:
-        if (evt.getClickCount() == 1) {
+        if (evt.getClickCount() == 2) {
             this.row = tblkhachhang.getSelectedRow();
             this.edit();
         }
@@ -507,14 +507,9 @@ public class QLKhachHangJPanel extends javax.swing.JPanel {
     }
 
     void delete() {
-        if (Auth.isManager()) {//kiểm tra xem có phải là trưởng phòng hay không
-            //Nếu là trưởng phòng thì..
-            String makh = txtMakhachhang.getText();//lấy mã nhân viên
-            if (makh.equals(Auth.user.getMaNV())) {//kiểm tra mã nhân viên có trùng với mã nhân viên lấy bên trên hay không
-                MsgBox.alert(this, "Bạn không được xóa chính bạn");//nếu trùng thì thông báo...
-            } //trường hợp còn lại
-            else if (MsgBox.confirm(this, "Bạn thực sự muốn xóa nhân viên này")) {
-                try {
+        String makh = txtMakhachhang.getText();
+        if(MsgBox.confirm(this, "Bạn thực sự muốn xóa?")){
+            try {
                     dao.delete(makh);//xóa nhân viên từ mã nhân viên được lấy bên trên
                     this.fillTable();//Cập nhật, đổ lại dữ liệu lên bảng
                     this.clearForm();//Làm lại form
@@ -523,11 +518,8 @@ public class QLKhachHangJPanel extends javax.swing.JPanel {
                     e.printStackTrace();
                     MsgBox.alert(this, "Xóa thất bại");
                 }
-            }
-
-        } else {
-            MsgBox.alert(this, "Bạn không có quyền xóa nhân viên");//Trưởng phòng mới đc xóa
         }
+                                   
     }
 
     void clearForm() {//xóa trắng form       
