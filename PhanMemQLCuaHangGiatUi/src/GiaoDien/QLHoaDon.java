@@ -18,6 +18,9 @@ import Entity.NhanVien;
 import LopTienIch.MsgBox;
 import LopTienIch.XDate;
 import de.vogella.itext.write.PDF;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
 
@@ -34,7 +37,7 @@ public class QLHoaDon extends javax.swing.JInternalFrame {
 
     public QLHoaDon() {
         initComponents();
-        init();        
+        init();
     }
 
     /**
@@ -468,7 +471,8 @@ public class QLHoaDon extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_tblhoadonMouseClicked
 
     private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed
-        insert();
+//        insert();
+        insert2();
     }//GEN-LAST:event_btnThemActionPerformed
 
     private void btnSuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuaActionPerformed
@@ -574,21 +578,21 @@ public class QLHoaDon extends javax.swing.JInternalFrame {
 //        this.updateStatus();
     }
 
-    void insert() {//Tạo ra một nhân viên từ thông tin trên form
-        HoaDon hd = getForm();//Lấy Nhân viên từ form   
-        //NhanVien nv=getForm();
-        try {
-            dao.insert(hd);//Tạo một nhân viên được lấy ra từ form
-            this.fillTableHoaDon();//Cập nhật, đổ lại dữ liệu lên bảng
-            MsgBox.alert(this, "Thêm mới thành công");
-            this.clearForm();//Làm lại form
-
-        } catch (Exception e) {
-            e.printStackTrace();
-            MsgBox.alert(this, "Thêm mới thất bại");
-        }
-
-    }
+//    void insert() {//Tạo ra một nhân viên từ thông tin trên form
+//        HoaDon hd = getForm();//Lấy Nhân viên từ form   
+//        //NhanVien nv=getForm();
+//        try {
+//            dao.insert(hd);//Tạo một nhân viên được lấy ra từ form
+//            this.fillTableHoaDon();//Cập nhật, đổ lại dữ liệu lên bảng
+//            MsgBox.alert(this, "Thêm mới thành công");
+//            this.clearForm();//Làm lại form
+//
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            MsgBox.alert(this, "Thêm mới thất bại");
+//        }
+//
+//    }
 
     void update() {
         HoaDon nv = getForm();
@@ -604,19 +608,20 @@ public class QLHoaDon extends javax.swing.JInternalFrame {
 
     void delete() {
         String mahd = txtMaHD.getText();
-        if(MsgBox.confirm(this, "Bạn thực sự muốn xóa?")){
+        if (MsgBox.confirm(this, "Bạn thực sự muốn xóa?")) {
             try {
-                    dao.delete(mahd);//xóa nhân viên từ mã nhân viên được lấy bên trên
-                    this.fillTableHoaDon();//Cập nhật, đổ lại dữ liệu lên bảng
-                    this.clearForm();//Làm lại form
-                    MsgBox.alert(this, "Xóa thành công");
-                } catch (Exception e) {
-                    e.printStackTrace();
-                    MsgBox.alert(this, "Xóa thất bại");
-                }
+                dao.delete(mahd);//xóa nhân viên từ mã nhân viên được lấy bên trên
+                this.fillTableHoaDon();//Cập nhật, đổ lại dữ liệu lên bảng
+                this.clearForm();//Làm lại form
+                MsgBox.alert(this, "Xóa thành công");
+            } catch (Exception e) {
+                e.printStackTrace();
+                MsgBox.alert(this, "Xóa thất bại");
+            }
         }
-                                   
+
     }
+
     void clearForm() {//xóa trắng form       
         txttenkh.setText(null);
         txtsdt.setText(null);
@@ -645,7 +650,6 @@ public class QLHoaDon extends javax.swing.JInternalFrame {
 //        btnXoa.setEnabled(edit);
 //
 //    }
-
     void fillTableHoaDon() {
         DefaultTableModel model = (DefaultTableModel) tblhoadon.getModel();
         model.setRowCount(0);
@@ -678,7 +682,6 @@ public class QLHoaDon extends javax.swing.JInternalFrame {
         txtngaynhan.setText(tblhoadon.getValueAt(row, 12).toString());
         txtngaytra.setText(tblhoadon.getValueAt(row, 13).toString());
         txtthanhtien.setText(tblhoadon.getValueAt(row, 14).toString());
-        
 
     }
 
@@ -711,5 +714,36 @@ public class QLHoaDon extends javax.swing.JInternalFrame {
 //       nv.setTenNV(txtnvnhan.getText());
         //nv.setSDT(txtsdt.getText());
         return hd;
+    }
+    String dburl = "jdbc:sqlserver://localhost:1433;database=QLGiatUi";
+
+    private void insert2() {
+        try {
+            Connection con = DriverManager.getConnection(dburl, "sa", "12345");
+            String sql = " INSERT INTO HoaDon(MaHD, NgayNhan, NgayTra, TrangThai, Thanhtien, MaNV, MaKH) VALUES(?,?,?,?,?,?,?)";
+            PreparedStatement stm = con.prepareStatement(sql);
+            stm.setString(1, txtMaHD.getText().trim());
+            stm.setString(2, txtngaynhan.getText().trim());
+            stm.setString(3, txtngaytra.getText().trim());
+            String tt = "";
+            if (rdoDaThanhToan.isSelected()) {
+                tt = "1";
+            } else {
+                tt = "0";
+            }
+            stm.setString(4, tt);
+            stm.setString(5, txtthanhtien.getText().trim());
+            stm.setString(6, txtMaNV.getText().trim());
+            stm.setString(7, txtMaKH.getText().trim());
+
+            stm.executeUpdate();
+            MsgBox.alert(this, "thêm thành công");
+            stm.close();
+            con.close();
+            fillTableHoaDon();
+            dodulieulentext(0);
+
+        } catch (Exception e) {
+        }
     }
 }
